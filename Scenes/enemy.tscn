@@ -33,4 +33,5 @@ offset_bottom = 240.0
 wait_time = 0.8
 autostart = true
 
+[connection signal="death" from="HPBar" to="." method="die"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

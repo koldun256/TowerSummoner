@@ -26,14 +26,13 @@ position = Vector2(788, 572)
 
 [node name="EnemySpawner" parent="." instance=ExtResource("6_xouyh")]
 position = Vector2(16, -198)
-
-[node name="Wolf" parent="." instance=ExtResource("7_n7lxx")]
-z_index = 1
-position = Vector2(-26.125, 631.25)
-scale = Vector2(2.01384, 1.59409)
+spawn_interval = 5.0
 
 [node name="Enemy" parent="." instance=ExtResource("6_8kcp8")]
 position = Vector2(410, -313)
+
+[node name="Wolf" parent="." instance=ExtResource("7_n7lxx")]
+position = Vector2(-141, 469)
 
 [connection signal="set_target" from="Map" to="Player/Char" method="set_target"]
 
