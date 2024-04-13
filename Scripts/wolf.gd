@@ -5,7 +5,7 @@ var target = null
 @export var damage = 30
 @export var attack_interval = 0.8
 var attack_cd = 0
-@export var speed = 500
+@export var speed = 100
 var tower
 
 func _ready():
