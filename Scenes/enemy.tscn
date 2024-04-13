@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7lo7gvkqd3l1"]
+[gd_scene load_steps=4 format=3 uid="uid://m56sj5pd3xp4"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_50a6w"]
-[ext_resource type="Texture2D" uid="uid://c68flso6yc8b6" path="res://Img/Sandal.jpg" id="2_jh35i"]
+[ext_resource type="Texture2D" uid="uid://c68flso6yc8b6" path="res://img/Sandal.jpg" id="2_jh35i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j5f8k"]
 size = Vector2(834, 823)

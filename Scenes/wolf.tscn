@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnqi3bjloh48u"]
+
+[ext_resource type="Texture2D" uid="uid://caelxkk2ovvhj" path="res://img/images.jpg" id="1_pfwwv"]
+[ext_resource type="Script" path="res://Scenes/wolf.gd" id="2_5al1c"]
+
+[node name="Sprite2D" type="Sprite2D"]
+scale = Vector2(1.2199, 1.42245)
+texture = ExtResource("1_pfwwv")
+script = ExtResource("2_5al1c")
