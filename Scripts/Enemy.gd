@@ -2,8 +2,6 @@ extends CharacterBody2D
 
 @export var SPEED : float = 300.0
 
-@export var radius : float = 300
-
 
 var target2attack
 
@@ -19,12 +17,20 @@ enum {
 
 var state = SURROUND
 
+func take_damage(d):
+	print("took " + str(d) + " damage")
+	$HPBar.take_damage(d)
+	
 func _ready():
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
 	randomnum = rng.randf()
 	#point2move = get_circle_position(randomnum)
 	target2attack=get_closest_target()
+
+func die():
+	print("oh no im dead")
+	queue_free()
 
 func _physics_process(delta):
 	match state:
@@ -40,6 +46,7 @@ func move(target, delta):
 	
 func get_circle_position(random):
 	var kill_circle_centre = target2attack.global_position
+	var radius = 40
 	var angle = random*PI*2;
 	var x=kill_circle_centre.x+cos(angle)*radius;
 	var y=kill_circle_centre.y+sin(angle)*radius;

@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmowp8kco4a1c"]
+[gd_scene load_steps=8 format=3 uid="uid://dmowp8kco4a1c"]
 
-[ext_resource type="Texture2D" uid="uid://doh6ox7meqrq5" path="res://Img/grass.jpg" id="1_cvuma"]
+[ext_resource type="Texture2D" uid="uid://doh6ox7meqrq5" path="res://img/grass.jpg" id="1_cvuma"]
 [ext_resource type="Script" path="res://Scripts/Map.gd" id="2_6cihn"]
 [ext_resource type="Script" path="res://Scripts/RTSCamera.gd" id="3_i84ss"]
 [ext_resource type="PackedScene" uid="uid://c0n4m2o6meanc" path="res://Scenes/char.tscn" id="4_ffafk"]
-[ext_resource type="PackedScene" uid="uid://cgkyrrq8o4ybr" path="res://Scenes/tower.tscn" id="5_6kba7"]
-[ext_resource type="PackedScene" uid="uid://dmv7ehd41t0d4" path="res://Scenes/enemy_spawner.tscn" id="6_xouyh"]
+[ext_resource type="PackedScene" path="res://Scenes/tower.tscn" id="5_6kba7"]
+[ext_resource type="PackedScene" uid="uid://cbm6tq6us4eiu" path="res://Scenes/enemy_spawner.tscn" id="6_xouyh"]
+[ext_resource type="PackedScene" uid="uid://bnqi3bjloh48u" path="res://Scenes/wolf.tscn" id="7_n7lxx"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -27,3 +28,6 @@ position = Vector2(-899, -337)
 position = Vector2(788, 572)
 
 [node name="EnemySpawner" parent="." instance=ExtResource("6_xouyh")]
+
+[node name="Wolf" parent="." groups=["Targets"] instance=ExtResource("7_n7lxx")]
+position = Vector2(-523, 454)
