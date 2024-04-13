@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmowp8kco4a1c"]
+[gd_scene load_steps=7 format=3 uid="uid://dmowp8kco4a1c"]
 
-[ext_resource type="Texture2D" uid="uid://doh6ox7meqrq5" path="res://img/grass.jpg" id="1_cvuma"]
+[ext_resource type="Texture2D" uid="uid://doh6ox7meqrq5" path="res://Img/grass.jpg" id="1_cvuma"]
 [ext_resource type="Script" path="res://Scripts/Map.gd" id="2_6cihn"]
 [ext_resource type="Script" path="res://Scripts/RTSCamera.gd" id="3_i84ss"]
 [ext_resource type="PackedScene" uid="uid://c0n4m2o6meanc" path="res://Scenes/char.tscn" id="4_ffafk"]
+[ext_resource type="PackedScene" uid="uid://cgkyrrq8o4ybr" path="res://Scenes/tower.tscn" id="5_6kba7"]
+[ext_resource type="PackedScene" uid="uid://c7lo7gvkqd3l1" path="res://Scenes/enemy.tscn" id="6_8kcp8"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -17,3 +19,37 @@ position = Vector2(-647, -183)
 script = ExtResource("3_i84ss")
 
 [node name="Char" parent="." instance=ExtResource("4_ffafk")]
+
+[node name="Tower" parent="." instance=ExtResource("5_6kba7")]
+position = Vector2(-899, -337)
+
+[node name="Tower2" parent="." instance=ExtResource("5_6kba7")]
+position = Vector2(788, 572)
+
+[node name="Enemy" parent="." instance=ExtResource("6_8kcp8")]
+position = Vector2(142, 712)
+scale = Vector2(0.35, 0.35)
+
+[node name="Enemy2" parent="." instance=ExtResource("6_8kcp8")]
+position = Vector2(-899, 560)
+scale = Vector2(0.35, 0.35)
+
+[node name="Enemy3" parent="." instance=ExtResource("6_8kcp8")]
+position = Vector2(-112, 163)
+scale = Vector2(0.35, 0.35)
+
+[node name="Enemy4" parent="." instance=ExtResource("6_8kcp8")]
+position = Vector2(777, -50)
+scale = Vector2(0.35, 0.35)
+
+[node name="Enemy5" parent="." instance=ExtResource("6_8kcp8")]
+position = Vector2(-19.9999, -377)
+scale = Vector2(0.35, 0.35)
+
+[node name="Enemy6" parent="." instance=ExtResource("6_8kcp8")]
+position = Vector2(-1169, 77)
+scale = Vector2(0.35, 0.35)
+
+[node name="Enemy7" parent="." instance=ExtResource("6_8kcp8")]
+position = Vector2(1203, -199)
+scale = Vector2(0.35, 0.35)
