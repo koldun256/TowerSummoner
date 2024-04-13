@@ -21,13 +21,13 @@ script = ExtResource("3_i84ss")
 
 [node name="Char" parent="." instance=ExtResource("4_ffafk")]
 
-[node name="Tower" parent="." instance=ExtResource("5_6kba7")]
+[node name="Tower" parent="." groups=["Building"] instance=ExtResource("5_6kba7")]
 position = Vector2(-899, -337)
 
-[node name="Tower2" parent="." instance=ExtResource("5_6kba7")]
+[node name="Tower2" parent="." groups=["Building"] instance=ExtResource("5_6kba7")]
 position = Vector2(788, 572)
 
 [node name="EnemySpawner" parent="." instance=ExtResource("6_xouyh")]
 
-[node name="Wolf" parent="." groups=["Targets"] instance=ExtResource("7_n7lxx")]
-position = Vector2(-523, 454)
+[node name="Wolf" parent="." instance=ExtResource("7_n7lxx")]
+position = Vector2(179, 733)

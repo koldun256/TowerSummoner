@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scenes/wolf.gd" id="2_5al1c"]
 [ext_resource type="PackedScene" uid="uid://ctjjekc816lvj" path="res://Scenes/hpbar.tscn" id="3_5eupl"]
 
-[node name="Wolf" type="Sprite2D"]
+[node name="Wolf" type="Sprite2D" groups=["Summon"]]
 scale = Vector2(1.2199, 1.42245)
 texture = ExtResource("1_pfwwv")
 script = ExtResource("2_5al1c")

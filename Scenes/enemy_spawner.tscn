@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmv7ehd41t0d4"]
+[gd_scene load_steps=2 format=3 uid="uid://cbm6tq6us4eiu"]
 
-[ext_resource type="PackedScene" uid="uid://c7lo7gvkqd3l1" path="res://Scenes/enemy.tscn" id="1_nb32f"]
+[ext_resource type="PackedScene" uid="uid://m56sj5pd3xp4" path="res://Scenes/enemy.tscn" id="1_nb32f"]
 
 [node name="EnemySpawner" type="Node2D"]
 
@@ -11,7 +11,7 @@ position = Vector2(-310, 200)
 position = Vector2(-294, -198)
 
 [node name="Enemy3" parent="." instance=ExtResource("1_nb32f")]
-position = Vector2(181, -195)
+position = Vector2(-1113, -709)
 
 [node name="Enemy4" parent="." instance=ExtResource("1_nb32f")]
 position = Vector2(265, 263)
