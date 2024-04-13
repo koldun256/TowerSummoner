@@ -39,9 +39,11 @@ func choose_state():
 	if target2attack!=null:
 		if global_position.distance_to(target2attack.global_position)<=attack_radius:
 			state=ATTACK
+			#print("Attack")
 			$AttackTimer.start()
 		else :
 			state = SURROUND
+			#print("Surround")
 	else :
 		target2attack=get_closest_target()
 
@@ -59,6 +61,7 @@ func attack(target):
 		can_attack=false
 
 func _on_attack_timer_timeout():
+	print("Attack")
 	can_attack=true
 	$AttackTimer.start()
 

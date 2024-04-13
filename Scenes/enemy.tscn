@@ -11,10 +11,12 @@ radius = 331.003
 scale = Vector2(0.25, 0.25)
 safe_margin = 0.001
 script = ExtResource("1_50a6w")
+attack_radius = 200.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-15.44, 1.5)
 shape = SubResource("CircleShape2D_7sny8")
+disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-40, 4)
@@ -28,5 +30,7 @@ offset_right = -4.0
 offset_bottom = 240.0
 
 [node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.8
+autostart = true
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
