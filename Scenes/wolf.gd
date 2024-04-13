@@ -7,6 +7,9 @@ var target = null
 var attack_cd = 0
 @export var speed = 500
 
+func _ready():
+	add_to_group("Targets")
+	
 func choose_target():
 	var nearest_distance = 99999
 	var nearest_node: Node2D = null

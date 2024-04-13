@@ -29,5 +29,5 @@ position = Vector2(788, 572)
 
 [node name="EnemySpawner" parent="." instance=ExtResource("6_xouyh")]
 
-[node name="Sprite2D" parent="." instance=ExtResource("7_n7lxx")]
-position = Vector2(-945, 654)
+[node name="Wolf" parent="." groups=["Targets"] instance=ExtResource("7_n7lxx")]
+position = Vector2(-523, 454)
