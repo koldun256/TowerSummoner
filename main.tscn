@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://doh6ox7meqrq5" path="res://img/grass.jpg" id="1_xrh3n"]
 [ext_resource type="Texture2D" uid="uid://cg6856n0xvysm" path="res://img/char.jpg" id="2_jrnfi"]
 [ext_resource type="Script" path="res://Scripts/RTSCamera.gd" id="2_veh85"]
-[ext_resource type="Script" path="res://Player.gd" id="4_3yuwp"]
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="4_3yuwp"]
 
 [node name="Node2D" type="Node2D"]
 

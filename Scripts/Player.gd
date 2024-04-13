@@ -5,8 +5,7 @@ var target = null
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
-		target = to_local(event.position)
-		print(target)
+		target = get_global_mouse_position()
 
 func _process(delta):
 	if target == null:
