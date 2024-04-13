@@ -24,6 +24,7 @@ func take_damage(d):
 	$HPBar.take_damage(d)
 	
 func _ready():
+	add_to_group("Enemy")
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
 	randomnum = rng.randf()

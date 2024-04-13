@@ -19,12 +19,12 @@ func choose_target():
 	var nearest_enemy: Node2D = null
 
 	for enemy in get_tree().get_nodes_in_group("Enemy"): # bipki
+		
 		if "Building" in enemy.target2attack.get_groups() and enemy.target2attack != tower:
 			continue
-			
-		if "Summon" in enemy.target2attack.get_groups() and enemy.target2attack.target != tower:
+		if "Summon" in enemy.target2attack.get_groups() and enemy.target2attack.tower != tower:
 			continue
-			
+		print("Kawo2")	
 		var distance = global_position.distance_to(enemy.global_position)
 		if distance < nearest_distance:
 			nearest_distance = distance
@@ -50,3 +50,6 @@ func _process(delta):
 
 	var direction = (target.position - position).normalized()
 	position += direction * speed * delta
+	
+func die():
+	queue_free()

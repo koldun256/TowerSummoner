@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://dmowp8kco4a1c"]
 
-[ext_resource type="PackedScene" path="res://Scenes/map.tscn" id="1_ojirv"]
+[ext_resource type="PackedScene" uid="uid://cyomu7y58wk4f" path="res://Scenes/map.tscn" id="1_ojirv"]
 [ext_resource type="Script" path="res://Scripts/RTSCamera.gd" id="3_i84ss"]
 [ext_resource type="PackedScene" uid="uid://c0n4m2o6meanc" path="res://Scenes/char.tscn" id="4_ffafk"]
 [ext_resource type="PackedScene" uid="uid://cgkyrrq8o4ybr" path="res://Scenes/tower.tscn" id="5_6kba7"]
 [ext_resource type="PackedScene" uid="uid://c7lo7gvkqd3l1" path="res://Scenes/enemy.tscn" id="6_8kcp8"]
 [ext_resource type="PackedScene" uid="uid://mw8ckf7lfxna" path="res://Scenes/enemy_spawner.tscn" id="6_xouyh"]
-[ext_resource type="PackedScene" path="res://Scenes/wolf.tscn" id="7_n7lxx"]
+[ext_resource type="PackedScene" uid="uid://bnqi3bjloh48u" path="res://Scenes/wolf.tscn" id="7_n7lxx"]
 
 [node name="Node2D" type="Node2D"]
 
