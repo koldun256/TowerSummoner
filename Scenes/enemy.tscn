@@ -1,22 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7lo7gvkqd3l1"]
+[gd_scene load_steps=6 format=3 uid="uid://c7lo7gvkqd3l1"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_50a6w"]
-[ext_resource type="Texture2D" uid="uid://co1tls5yhnhf8" path="res://Img/skull_idol.png" id="2_oq2y5"]
-[ext_resource type="PackedScene" path="res://Scenes/hpbar.tscn" id="3_j3gb6"]
+[ext_resource type="Texture2D" uid="uid://co1tls5yhnhf8" path="res://img/skull_idol.png" id="2_oq2y5"]
+[ext_resource type="PackedScene" uid="uid://ctjjekc816lvj" path="res://Scenes/hpbar.tscn" id="3_j3gb6"]
+[ext_resource type="PackedScene" uid="uid://d01ht0m0psrqu" path="res://Scenes/summonable.tscn" id="4_k4kbl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7sny8"]
 radius = 331.003
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
 scale = Vector2(0.25, 0.25)
+collision_layer = 16384
+collision_mask = 32768
+input_pickable = true
 safe_margin = 0.001
 script = ExtResource("1_50a6w")
 attack_radius = 200.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-15.44, 1.5)
-shape = SubResource("CircleShape2D_7sny8")
-disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-40, 4)
@@ -33,4 +32,14 @@ offset_bottom = 240.0
 wait_time = 0.8
 autostart = true
 
+[node name="Summonable" parent="." instance=ExtResource("4_k4kbl")]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-15.44, 1.5)
+shape = SubResource("CircleShape2D_7sny8")
+
+[connection signal="input_event" from="." to="Summonable" method="_on_area_2d_input_event"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="input_event" from="Area2D" to="Summonable" method="_on_area_2d_input_event"]

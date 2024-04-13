@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bnqi3bjloh48u"]
+[gd_scene load_steps=6 format=3 uid="uid://bnqi3bjloh48u"]
 
-[ext_resource type="Texture2D" uid="uid://caelxkk2ovvhj" path="res://Img/images.jpg" id="1_pfwwv"]
+[ext_resource type="Texture2D" uid="uid://caelxkk2ovvhj" path="res://img/images.jpg" id="1_pfwwv"]
 [ext_resource type="Script" path="res://Scripts/wolf.gd" id="2_gj3qv"]
-[ext_resource type="PackedScene" path="res://Scenes/hpbar.tscn" id="3_5eupl"]
+[ext_resource type="PackedScene" uid="uid://ctjjekc816lvj" path="res://Scenes/hpbar.tscn" id="3_5eupl"]
 [ext_resource type="PackedScene" uid="uid://d01ht0m0psrqu" path="res://Scenes/summonable.tscn" id="4_cra7q"]
-[ext_resource type="Script" path="res://Scenes/summonable.gd" id="5_7rgaf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gs73v"]
 size = Vector2(224, 106)
@@ -24,7 +23,6 @@ offset_bottom = 134.978
 health = 100
 
 [node name="Summonable" parent="." instance=ExtResource("4_cra7q")]
-script = ExtResource("5_7rgaf")
 
 [node name="Area2D" type="Area2D" parent="."]
 
