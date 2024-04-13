@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmowp8kco4a1c"]
+[gd_scene load_steps=5 format=3 uid="uid://uvxowhk3cs02"]
 
-[ext_resource type="Texture2D" uid="uid://doh6ox7meqrq5" path="res://img/grass.jpg" id="1_xrh3n"]
-[ext_resource type="Texture2D" uid="uid://cg6856n0xvysm" path="res://img/char.jpg" id="2_jrnfi"]
+[ext_resource type="Texture2D" uid="uid://doh6ox7meqrq5" path="res://Img/grass.jpg" id="1_xrh3n"]
+[ext_resource type="Texture2D" uid="uid://cg6856n0xvysm" path="res://Img/char.jpg" id="2_jrnfi"]
 [ext_resource type="Script" path="res://Scripts/RTSCamera.gd" id="2_veh85"]
 [ext_resource type="Script" path="res://Player.gd" id="4_3yuwp"]
 
