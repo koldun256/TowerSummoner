@@ -34,10 +34,13 @@ func attack(target):
 	target.take_damage(damage)
 
 func _process(delta):
-	if target == null or not target.is_node_ready():
-		target = choose_target()
-		if target == null:
-			return
+	target = choose_target()
+	if target == null:
+		return
+	#if target == null or not target.is_node_ready():
+		#target = choose_target()
+		#if target == null:
+			#return
 			
 	if global_position.distance_to(target.global_position) <= attack_range:
 		if attack_cd > 0:

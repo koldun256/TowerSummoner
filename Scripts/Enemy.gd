@@ -71,10 +71,10 @@ func move(target, delta):
 	
 func get_circle_position(random):
 	var kill_circle_centre = target2attack.global_position
-	var angle = random*PI*2;
+	var angle = random*PI*2
 	var radius=attack_radius-10
-	var x=kill_circle_centre.x+cos(angle)*radius;
-	var y=kill_circle_centre.y+sin(angle)*radius;
+	var x=kill_circle_centre.x+cos(angle)*radius
+	var y=kill_circle_centre.y+sin(angle)*radius
 	
 	return Vector2(x, y)
 
@@ -90,7 +90,7 @@ func get_closest_target():
 				nearest_node = node
 	
 	# Итерируемся по всем нодам на сцене
-	if nearest_node==null:
+	if nearest_node == null:
 		for node in get_tree().get_nodes_in_group("Targets"):
 			if node is Node2D:
 				var distance = global_position.distance_to(node.global_position)

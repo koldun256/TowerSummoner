@@ -9,12 +9,13 @@
 radius = 581.997
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.35, 0.35)
 collision_layer = 16384
 collision_mask = 32768
 input_pickable = true
 safe_margin = 0.001
 script = ExtResource("1_50a6w")
+SPEED = 200.0
 attack_radius = 200.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

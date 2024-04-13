@@ -1,4 +1,4 @@
-extends Sprite2D
+extends CharacterBody2D
 
 var target = null
 @export var speed = 500.0;
@@ -16,12 +16,11 @@ func unset_target():
 	target = null
 	marker.visible = false
 
-func _process(delta):
+func _physics_process(delta):
 	if target == null:
 		return
 	var direction = (target - position).normalized()
-	position += direction * speed * delta
-	
+	move_and_collide(direction * speed * delta)
 	if (target - position).length() < speed * delta:
 		unset_target()
 
