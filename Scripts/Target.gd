@@ -1,6 +1,7 @@
 extends Sprite2D
 
-
+func take_damage(d):
+	$HPBar.take_damage(d)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_to_group("Targets")

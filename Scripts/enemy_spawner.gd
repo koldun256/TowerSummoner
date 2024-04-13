@@ -10,7 +10,6 @@ func _ready():
 	$Timer.start(spawn_interval)
 
 func _on_timer_timeout():
-	print("Спавним врага")
 	# Создаем новую ноду на основе префаба
 	var new_enemy = enemy_node.instantiate()
 
