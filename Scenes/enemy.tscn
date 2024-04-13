@@ -20,10 +20,8 @@ shape = SubResource("RectangleShape2D_j5f8k")
 texture = ExtResource("2_jh35i")
 
 [node name="HPBar" parent="." instance=ExtResource("3_1p7ri")]
-offset_left = 30695.1
-offset_top = 14179.8
-offset_right = 30695.1
-offset_bottom = 14179.8
+offset_top = 476.0
+offset_bottom = 476.0
 health = 100
 
 [connection signal="death" from="HPBar" to="." method="die"]

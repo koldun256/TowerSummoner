@@ -15,7 +15,6 @@ func take_damage(d):
 	$HPBar.take_damage(d)
 
 func choose_target():
-	print("choosing target")
 	var nearest_distance = 99999
 	var nearest_enemy: Node2D = null
 
