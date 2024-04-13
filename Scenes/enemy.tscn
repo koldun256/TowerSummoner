@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://m56sj5pd3xp4"]
+[gd_scene load_steps=5 format=3 uid="uid://c7lo7gvkqd3l1"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_50a6w"]
-[ext_resource type="Texture2D" uid="uid://c68flso6yc8b6" path="res://img/Sandal.jpg" id="2_jh35i"]
-[ext_resource type="PackedScene" uid="uid://ctjjekc816lvj" path="res://Scenes/hpbar.tscn" id="3_1p7ri"]
+[ext_resource type="Texture2D" uid="uid://co1tls5yhnhf8" path="res://Img/skull_idol.png" id="2_oq2y5"]
+[ext_resource type="PackedScene" path="res://Scenes/hpbar.tscn" id="3_j3gb6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5f8k"]
-size = Vector2(834, 823)
+[sub_resource type="CircleShape2D" id="CircleShape2D_7sny8"]
+radius = 331.003
 
 [node name="Enemy" type="CharacterBody2D"]
 scale = Vector2(0.25, 0.25)
@@ -13,17 +13,16 @@ safe_margin = 0.001
 script = ExtResource("1_50a6w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 1.5)
-shape = SubResource("RectangleShape2D_j5f8k")
+position = Vector2(-15.44, 1.5)
+shape = SubResource("CircleShape2D_7sny8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_jh35i")
+position = Vector2(-40, 4)
+scale = Vector2(2.77333, 2.73333)
+texture = ExtResource("2_oq2y5")
 
-[node name="HPBar" parent="." instance=ExtResource("3_1p7ri")]
-offset_left = 30695.1
-offset_top = 14179.8
-offset_right = 30695.1
-offset_bottom = 14179.8
-health = 100
-
-[connection signal="death" from="HPBar" to="." method="die"]
+[node name="HPBar" parent="." instance=ExtResource("3_j3gb6")]
+offset_left = -4.0
+offset_top = 240.0
+offset_right = -4.0
+offset_bottom = 240.0

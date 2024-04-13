@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c42321httet3o"
-path="res://.godot/imported/tower.jpg-3f711b5d2520503b3d2736a983abdb21.ctex"
+uid="uid://co1tls5yhnhf8"
+path="res://.godot/imported/skull_idol.png-71c4e3831f02bff16e68a0efe38ce644.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Img/tower.jpg"
-dest_files=["res://.godot/imported/tower.jpg-3f711b5d2520503b3d2736a983abdb21.ctex"]
+source_file="res://Img/skull_idol.png"
+dest_files=["res://.godot/imported/skull_idol.png-71c4e3831f02bff16e68a0efe38ce644.ctex"]
 
 [params]
 

@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://c0n4m2o6meanc"]
 
-[ext_resource type="Texture2D" uid="uid://cg6856n0xvysm" path="res://img/char.jpg" id="1_cc3u3"]
+[ext_resource type="Texture2D" uid="uid://cg6856n0xvysm" path="res://Img/char.jpg" id="1_cc3u3"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="2_wxgen"]
-[ext_resource type="Texture2D" uid="uid://r51qg1jpt5o3" path="res://img/marker.jpg" id="3_24wp5"]
+[ext_resource type="Texture2D" uid="uid://r51qg1jpt5o3" path="res://Img/marker.jpg" id="3_24wp5"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="Marker" type="Sprite2D" parent="."]
 position = Vector2(1498, 1613)
