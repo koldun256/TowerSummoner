@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 @export var SPEED : float = 300.0
 @export var damage : float = 10
-@export var attack_range : float = 0.8
+@export var attack_delay: float = 0.8
+var attack_cd=0
 @export var attack_radius : float = 30
 var can_attack=false
 
@@ -30,7 +31,6 @@ func _ready():
 	randomnum = rng.randf()
 	#point2move = get_circle_position(randomnum)
 	target2attack=get_closest_target()
-	$AttackTimer.wait_time = attack_range
 
 func die():
 	print("oh no im dead")
@@ -41,7 +41,6 @@ func choose_state():
 		if global_position.distance_to(target2attack.global_position)<=attack_radius:
 			state=ATTACK
 			#print("Attack")
-			$AttackTimer.start()
 		else :
 			state = SURROUND
 			#print("Surround")
@@ -54,17 +53,14 @@ func _physics_process(delta):
 		SURROUND:
 			move(get_circle_position(randomnum), delta)
 		ATTACK:
-			attack(target2attack)
+			attack(target2attack, delta)
 
-func attack(target):
-	if can_attack:
-		target.take_damage(damage)
-		can_attack=false
-
-func _on_attack_timer_timeout():
-	print("Attack")
-	can_attack=true
-	$AttackTimer.start()
+func attack(target, delta):
+	if attack_cd > 0:
+		attack_cd -= delta
+		return
+	target.take_damage(damage)
+	attack_cd = attack_delay
 
 func move(target, delta):
 	var direction = (target - global_position).normalized()

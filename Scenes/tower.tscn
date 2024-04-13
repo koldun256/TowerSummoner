@@ -1,12 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://cgkyrrq8o4ybr"]
 
-[ext_resource type="Texture2D" uid="uid://c42321httet3o" path="res://img/tower.jpg" id="1_blh2u"]
+[ext_resource type="Texture2D" uid="uid://bearfe8l70bp8" path="res://Img/fortress.png" id="1_41jy1"]
 [ext_resource type="Script" path="res://Scripts/Target.gd" id="2_w5xev"]
-[ext_resource type="PackedScene" uid="uid://ctjjekc816lvj" path="res://Scenes/hpbar.tscn" id="3_lehqd"]
+[ext_resource type="PackedScene" path="res://Scenes/hpbar.tscn" id="3_lehqd"]
 
 [node name="Tower" type="Sprite2D" groups=["Targets"]]
 position = Vector2(-4, 0)
-texture = ExtResource("1_blh2u")
+texture = ExtResource("1_41jy1")
+offset = Vector2(0, -250)
 script = ExtResource("2_w5xev")
 
 [node name="HPBar" parent="." instance=ExtResource("3_lehqd")]
@@ -15,3 +16,6 @@ offset_top = 315.0
 offset_right = 15.0
 offset_bottom = 315.0
 max_health = 1000
+health = 1000
+
+[connection signal="death" from="HPBar" to="." method="die"]
