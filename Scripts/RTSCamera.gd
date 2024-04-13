@@ -7,7 +7,6 @@ func _ready():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var dir_x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	var dir_y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
