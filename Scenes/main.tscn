@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmowp8kco4a1c"]
+
+[ext_resource type="Texture2D" uid="uid://doh6ox7meqrq5" path="res://img/grass.jpg" id="1_cvuma"]
+[ext_resource type="Script" path="res://Scripts/Map.gd" id="2_6cihn"]
+[ext_resource type="Script" path="res://Scripts/RTSCamera.gd" id="3_i84ss"]
+[ext_resource type="PackedScene" uid="uid://c0n4m2o6meanc" path="res://Scenes/char.tscn" id="4_ffafk"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Map" type="Sprite2D" parent="."]
+scale = Vector2(6, 6)
+texture = ExtResource("1_cvuma")
+script = ExtResource("2_6cihn")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-647, -183)
+script = ExtResource("3_i84ss")
+
+[node name="Char" parent="." instance=ExtResource("4_ffafk")]
