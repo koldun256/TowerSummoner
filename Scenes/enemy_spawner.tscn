@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmv7ehd41t0d4"]
+[gd_scene load_steps=3 format=3 uid="uid://dmv7ehd41t0d4"]
 
+[ext_resource type="Script" path="res://Scripts/enemy_spawner.gd" id="1_3k7hy"]
 [ext_resource type="PackedScene" uid="uid://c7lo7gvkqd3l1" path="res://Scenes/enemy.tscn" id="1_nb32f"]
 
 [node name="EnemySpawner" type="Node2D"]
+script = ExtResource("1_3k7hy")
 
 [node name="Enemy" parent="." instance=ExtResource("1_nb32f")]
 position = Vector2(-310, 200)
