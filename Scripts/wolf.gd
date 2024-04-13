@@ -18,7 +18,7 @@ func choose_target():
 	var nearest_distance = 99999
 	var nearest_enemy: Node2D = null
 
-	for enemy in get_tree().get_nodes_in_group("Enemy"):
+	for enemy in get_tree().get_nodes_in_group("Enemy"): # bipki
 		if "Building" in enemy.target2attack.get_groups() and enemy.target2attack != tower:
 			continue
 			

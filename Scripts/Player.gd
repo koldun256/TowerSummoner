@@ -12,6 +12,10 @@ func _input(event):
 		marker.position = target
 		marker.visible = true
 
+func unset_target():
+	target = null
+	marker.visible = false
+
 func _process(delta):
 	if target == null:
 		return
@@ -19,8 +23,7 @@ func _process(delta):
 	position += direction * speed * delta
 	
 	if (target - position).length() < speed * delta:
-		target = null
-		marker.visible = false
+		unset_target()
 
 	close_tower = null
 	for tower in get_tree().get_nodes_in_group("Building"):
