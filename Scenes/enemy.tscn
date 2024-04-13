@@ -1,20 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://m56sj5pd3xp4"]
+[gd_scene load_steps=7 format=3 uid="uid://m56sj5pd3xp4"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_50a6w"]
 [ext_resource type="Texture2D" uid="uid://c68flso6yc8b6" path="res://img/Sandal.jpg" id="2_jh35i"]
 [ext_resource type="PackedScene" uid="uid://ctjjekc816lvj" path="res://Scenes/hpbar.tscn" id="3_1p7ri"]
+[ext_resource type="PackedScene" uid="uid://d01ht0m0psrqu" path="res://Scenes/summonable.tscn" id="4_1s7qd"]
+[ext_resource type="Script" path="res://Scenes/summonable.gd" id="5_0bap5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j5f8k"]
 size = Vector2(834, 823)
 
-[node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
+[node name="Enemy" type="CharacterBody2D" groups=["Creature", "Enemy"]]
 scale = Vector2(0.25, 0.25)
+input_pickable = true
 safe_margin = 0.001
 script = ExtResource("1_50a6w")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 1.5)
-shape = SubResource("RectangleShape2D_j5f8k")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_jh35i")
@@ -24,4 +23,12 @@ offset_top = 476.0
 offset_bottom = 476.0
 health = 100
 
+[node name="Summonable" parent="." instance=ExtResource("4_1s7qd")]
+script = ExtResource("5_0bap5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1.5)
+shape = SubResource("RectangleShape2D_j5f8k")
+
+[connection signal="input_event" from="." to="Summonable" method="_on_area_2d_input_event"]
 [connection signal="death" from="HPBar" to="." method="die"]

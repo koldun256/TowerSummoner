@@ -11,6 +11,6 @@ position = Vector2(1498, 1613)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_24wp5")
 
-[node name="Char" type="Sprite2D" parent="."]
+[node name="Char" type="Sprite2D" parent="." groups=["Player"]]
 texture = ExtResource("1_cc3u3")
 script = ExtResource("2_wxgen")

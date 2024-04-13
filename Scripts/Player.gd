@@ -9,7 +9,6 @@ var close_tower = null
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
 		target = get_global_mouse_position()
-		print(target)
 		marker.position = target
 		marker.visible = true
 
