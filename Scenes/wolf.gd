@@ -3,12 +3,13 @@ extends Sprite2D
 @onready var enemy_spawner = get_node("../EnemySpawner")
 var target = null
 @export var attack_range = 30.0
+@export var damage = 30
 @export var attack_interval = 0.8
 var attack_cd = 0
 @export var speed = 500
 
-func _ready():
-	add_to_group("Targets")
+func take_damage(d):
+	$HPBar.take_damage(d)
 	
 func choose_target():
 	var nearest_distance = 99999
@@ -22,8 +23,7 @@ func choose_target():
 	return nearest_node
 
 func attack(target):
-	print("attacking ")
-	print(target)
+	target.take_damage(damage)
 
 func _process(delta):
 	if target == null:
@@ -35,7 +35,9 @@ func _process(delta):
 		if attack_cd > 0:
 			attack_cd -= delta
 			return
-		return attack(target)
+		attack(target)
+		attack_cd = attack_interval
+		return
 
 	var direction = (target.position - position).normalized()
 	position += direction * speed * delta

@@ -17,12 +17,20 @@ enum {
 
 var state = SURROUND
 
+func take_damage(d):
+	print("took " + str(d) + " damage")
+	$HPBar.take_damage(d)
+	
 func _ready():
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
 	randomnum = rng.randf()
 	#point2move = get_circle_position(randomnum)
 	target2attack=get_closest_target()
+
+func die():
+	print("oh no im dead")
+	queue_free()
 
 func _physics_process(delta):
 	match state:
