@@ -26,13 +26,31 @@ position = Vector2(788, 572)
 
 [node name="EnemySpawner" parent="." instance=ExtResource("6_xouyh")]
 position = Vector2(16, -198)
-spawn_interval = 5.0
+wave_interval = 10
 
 [node name="Enemy" parent="." instance=ExtResource("6_8kcp8")]
 position = Vector2(410, -313)
 
 [node name="Wolf" parent="." instance=ExtResource("7_n7lxx")]
 position = Vector2(-141, 469)
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+zoom = Vector2(0.29, 0.29)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -200.0
+offset_right = 200.0
+grow_vertical = 0
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(200, 200)
+render_target_update_mode = 4
 
 [connection signal="set_target" from="Map" to="Player/Char" method="set_target"]
 
