@@ -41,5 +41,6 @@ position = Vector2(-15.44, 1.5)
 shape = SubResource("CircleShape2D_7sny8")
 
 [connection signal="input_event" from="." to="Summonable" method="_on_area_2d_input_event"]
+[connection signal="death" from="HPBar" to="." method="die"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="input_event" from="Area2D" to="Summonable" method="_on_area_2d_input_event"]
