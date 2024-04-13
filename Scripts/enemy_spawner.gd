@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var enemy_node: PackedScene
+var enemy_node:= preload("res://Scenes/enemy.tscn")
 
 # Периодичность спавна в секундах
 @export var spawn_interval: float = 2.0
@@ -9,10 +9,10 @@ func _ready():
 	# Запускаем таймер
 	$Timer.start(spawn_interval)
 
-# Функция вызывается при срабатывании таймера
-func _on_Timer_timeout():
+func _on_timer_timeout():
+	print("Спавним врага")
 	# Создаем новую ноду на основе префаба
-	var new_enemy = enemy_node.instance()
+	var new_enemy = enemy_node.instantiate()
 
 	# Добавляем созданную ноду на сцену
 	add_child(new_enemy)
