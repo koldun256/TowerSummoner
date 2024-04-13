@@ -15,3 +15,4 @@ texture = ExtResource("3_24wp5")
 scale = Vector2(0.47, 0.47)
 texture = ExtResource("2_5amlc")
 script = ExtResource("2_wxgen")
+tower_interact_range = 300
