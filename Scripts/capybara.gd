@@ -15,14 +15,15 @@ func _ready():
 	get_tree().get_first_node_in_group('Player').connect('on_tp', on_tp)
 	anim.play("Idle")
 
+func retarget():
+	target = choose_target()
+	
 func take_damage(d):
 	$HPBar.take_damage(d)
 	anim.play("GetDamage")
 
 func on_tp(unit, to_tower):
-	if unit == self:
-		tower = to_tower
-	target = choose_target()
+	retarget()
 
 func choose_target():
 	var nearest_distance = 99999

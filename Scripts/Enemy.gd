@@ -38,9 +38,11 @@ func _ready():
 	
 	get_tree().get_first_node_in_group('Player').connect('on_tp', on_tp)
 
-func on_tp(unit, to_tower):
+func retarget():
 	target2attack = get_closest_target()
-	state = SURROUND
+	
+func on_tp(unit, to_tower):
+	retarget()
 
 func die():
 	print("oh no im dead")

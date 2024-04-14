@@ -19,10 +19,11 @@ func take_damage(d):
 	$HPBar.take_damage(d)
 	anim.play("GetDamage")
 
-func on_tp(unit, to_tower):
-	if unit == self:
-		tower = to_tower
+func retarget():
 	target = choose_target()
+
+func on_tp(unit, to_tower):
+	retarget()
 
 func choose_target():
 	var nearest_distance = 99999

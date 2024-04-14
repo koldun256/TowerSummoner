@@ -45,12 +45,15 @@ func select_summon(pos):
 	
 	if unit == null:
 		return
-	anim.play("Cast")	
+	anim.play("Cast")
 	var send_particle = send_marker.instantiate()
 	add_child(send_particle)
 	send_particle.global_position=unit.global_position
 	
 	unit.global_position = close_tower.gen_summon_pos()
+	if unit.is_in_group('Summon'):
+		unit.tower = close_tower
+	unit.retarget()
 	
 	var get_particle=get_marker.instantiate()
 	add_child(get_particle)
