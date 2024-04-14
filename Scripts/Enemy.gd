@@ -13,6 +13,9 @@ var randomnum
 
 var point2move
 
+@onready var anim = get_node("AnimatedSprite2D")
+var can_play_next_anim=false
+
 enum {
 	SURROUND,
 	ATTACK,
@@ -23,6 +26,7 @@ var state = SURROUND
 func take_damage(d):
 	print("took " + str(d) + " damage")
 	$HPBar.take_damage(d)
+	anim.play("GetDamage")
 	
 func _ready():
 	add_to_group("Enemy")
@@ -56,17 +60,26 @@ func _physics_process(delta):
 			attack(target2attack, delta)
 
 func attack(target, delta):
+	
+	if can_play_next_anim:
+		anim.play("Idle")
 	if attack_cd > 0:
 		attack_cd -= delta
 		return
+	anim.play("Attack")
 	target.take_damage(damage)
 	attack_cd = attack_delay
 
 func move(target, delta):
+	anim.play("Move")
 	var direction = (target - global_position).normalized()
 	var desired_velocity = direction*SPEED
 	var steering = (desired_velocity - velocity)*delta*2.5
 	velocity+=steering
+	if direction.x>0:
+		anim.flip_h=true
+	else:
+		anim.flip_h=false
 	move_and_slide()
 	
 func get_circle_position(random):
@@ -102,4 +115,9 @@ func get_closest_target():
 	
 
 
+func _on_animated_sprite_2d_animation_changed():
+	can_play_next_anim=false
 
+
+func _on_animated_sprite_2d_animation_finished():
+	can_play_next_anim=true

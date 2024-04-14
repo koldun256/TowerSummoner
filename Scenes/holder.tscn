@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckdvr70k2b1qd"]
+
+[ext_resource type="Script" path="res://Scripts/holder.gd" id="1_a42oh"]
+[ext_resource type="PackedScene" uid="uid://dmowp8kco4a1c" path="res://Scenes/main.tscn" id="1_is7e2"]
+[ext_resource type="PackedScene" uid="uid://dx27ykxrks5rf" path="res://Scenes/minimap.tscn" id="2_hq8bd"]
+
+[node name="Holder" type="Node2D"]
+script = ExtResource("1_a42oh")
+
+[node name="Node2D" parent="." instance=ExtResource("1_is7e2")]
+
+[node name="Minimap" parent="." instance=ExtResource("2_hq8bd")]
+offset_left = -883.0
+offset_top = -436.0
+offset_right = -883.0
+offset_bottom = -436.0

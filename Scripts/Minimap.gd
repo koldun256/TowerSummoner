@@ -1,6 +1,4 @@
-extends SubViewport
-
-@onready var camera = $Camera2D
-
-func _physics_process(delta):
-	camera.position=owner.find_child("Player").position
+extends Control
+@export var newzoom = 8
+func _ready():
+	$SubViewportContainer/SubViewport/Node2D/MainCamera.zoom=newzoom

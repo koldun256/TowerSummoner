@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dmowp8kco4a1c"]
 
 [ext_resource type="PackedScene" uid="uid://cyomu7y58wk4f" path="res://Scenes/map.tscn" id="1_ojirv"]
-[ext_resource type="Script" path="res://Scripts/RTSCamera.gd" id="3_i84ss"]
+[ext_resource type="PackedScene" uid="uid://bxl8qqu3dindo" path="res://Scenes/main_camera.tscn" id="3_1to61"]
 [ext_resource type="PackedScene" uid="uid://c0n4m2o6meanc" path="res://Scenes/char.tscn" id="4_ffafk"]
 [ext_resource type="PackedScene" uid="uid://cgkyrrq8o4ybr" path="res://Scenes/tower.tscn" id="5_6kba7"]
 [ext_resource type="PackedScene" uid="uid://c7lo7gvkqd3l1" path="res://Scenes/enemy.tscn" id="6_8kcp8"]
@@ -12,9 +12,7 @@
 
 [node name="Map" parent="." instance=ExtResource("1_ojirv")]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-647, -183)
-script = ExtResource("3_i84ss")
+[node name="MainCamera" parent="." instance=ExtResource("3_1to61")]
 
 [node name="Player" parent="." instance=ExtResource("4_ffafk")]
 
@@ -33,24 +31,6 @@ position = Vector2(410, -313)
 
 [node name="Wolf" parent="." instance=ExtResource("7_n7lxx")]
 position = Vector2(-141, 469)
-
-[node name="Camera2D2" type="Camera2D" parent="."]
-zoom = Vector2(0.29, 0.29)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -200.0
-offset_right = 200.0
-grow_vertical = 0
-
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
-handle_input_locally = false
-size = Vector2i(200, 200)
-render_target_update_mode = 4
 
 [connection signal="set_target" from="Map" to="Player/Char" method="set_target"]
 
