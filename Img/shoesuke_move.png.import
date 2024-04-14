@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvol87da3h4tr"
-path="res://.godot/imported/shoesuke_move.png-e692486e136e5c0c08d4b429e8d2792f.ctex"
+path="res://.godot/imported/shoesuke_move.png-adf4e131836b033d929eb9ed496338cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Img/shoesuke_move.png"
-dest_files=["res://.godot/imported/shoesuke_move.png-e692486e136e5c0c08d4b429e8d2792f.ctex"]
+source_file="res://img/shoesuke_move.png"
+dest_files=["res://.godot/imported/shoesuke_move.png-adf4e131836b033d929eb9ed496338cd.ctex"]
 
 [params]
 

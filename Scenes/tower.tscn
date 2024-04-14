@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bearfe8l70bp8" path="res://img/fortress.png" id="1_41jy1"]
 [ext_resource type="Script" path="res://Scripts/Target.gd" id="2_w5xev"]
 [ext_resource type="PackedScene" uid="uid://ctjjekc816lvj" path="res://Scenes/hpbar.tscn" id="3_lehqd"]
-[ext_resource type="Texture2D" uid="uid://d4m7q2xdjh658" path="res://img/seal.png" id="3_nbpl5"]
+[ext_resource type="Texture2D" uid="uid://cs1v88c5dnwvl" path="res://img/seal.png" id="3_nbpl5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6iykm"]
 radius = 178.239

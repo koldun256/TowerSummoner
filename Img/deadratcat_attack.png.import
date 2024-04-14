@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bxkoq8vkews44"
-path="res://.godot/imported/deadratcat_attack.png-914e82dfde7416b819a7b131caaa72ef.ctex"
+path="res://.godot/imported/deadratcat_attack.png-7ab622f5c303b2b9639fe1bd0b0c09d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Img/deadratcat_attack.png"
-dest_files=["res://.godot/imported/deadratcat_attack.png-914e82dfde7416b819a7b131caaa72ef.ctex"]
+source_file="res://img/deadratcat_attack.png"
+dest_files=["res://.godot/imported/deadratcat_attack.png-7ab622f5c303b2b9639fe1bd0b0c09d9.ctex"]
 
 [params]
 
