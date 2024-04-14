@@ -8,7 +8,7 @@ extends Control
 
 @onready var slaves = [hamster, psina, capybara]
 @export var portraits: Array[Texture2D] = []
-var costs = [4, 6, 8]
+var costs = [4, 8, 8]
 
 func _ready():
 	hide_shop()

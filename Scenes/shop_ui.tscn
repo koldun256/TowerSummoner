@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://Scripts/shop_ui.gd" id="1_grhsl"]
 [ext_resource type="PackedScene" uid="uid://doku7xeq31v6d" path="res://Scenes/shop_item.tscn" id="2_btxqu"]
-[ext_resource type="Texture2D" uid="uid://7mccsg65d0ca" path="res://img/sadhamstersmol.png" id="2_x6ey7"]
-[ext_resource type="Texture2D" uid="uid://bp62rn1sabsk1" path="res://img/wolfsmol.png" id="3_fbghr"]
-[ext_resource type="Texture2D" uid="uid://dqr22cmstbexr" path="res://img/capybarasmol.png" id="4_0rbo4"]
+[ext_resource type="Texture2D" uid="uid://7mccsg65d0ca" path="res://Img/sadhamstersmol.png" id="2_x6ey7"]
+[ext_resource type="Texture2D" uid="uid://bp62rn1sabsk1" path="res://Img/wolfsmol.png" id="3_fbghr"]
+[ext_resource type="Texture2D" uid="uid://dqr22cmstbexr" path="res://Img/capybarasmol.png" id="4_0rbo4"]
 
 [node name="ShopUI" type="Control"]
 layout_mode = 3

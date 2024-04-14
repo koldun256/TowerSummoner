@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bx3p7tapjqh8j"
-path="res://.godot/imported/hospitalsmol.png-82bc05844f2af3863e080f00cace065e.ctex"
+path="res://.godot/imported/hospitalsmol.png-bd48b3162c7aefd9b2c92f0d6732d980.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/hospitalsmol.png"
-dest_files=["res://.godot/imported/hospitalsmol.png-82bc05844f2af3863e080f00cace065e.ctex"]
+source_file="res://Img/hospitalsmol.png"
+dest_files=["res://.godot/imported/hospitalsmol.png-bd48b3162c7aefd9b2c92f0d6732d980.ctex"]
 
 [params]
 
