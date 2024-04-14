@@ -27,7 +27,7 @@ func select_summon(pos):
 				min_distance = dist
 				unit = summon
 	
-	unit.global_position = global_position
+	unit.global_position = close_tower.gen_summon_pos()
 	
 func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_left_click"):
