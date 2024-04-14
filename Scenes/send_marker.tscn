@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=3 uid="uid://b1fcqijy36fon"]
+
+[ext_resource type="Texture2D" uid="uid://b1ii0xvpd3ehy" path="res://Img/teleport0.png" id="1_vwmaa"]
+[ext_resource type="Script" path="res://Scripts/TPmarker.gd" id="2_a6cfi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msk4y"]
+atlas = ExtResource("1_vwmaa")
+region = Rect2(0, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yvaj"]
+atlas = ExtResource("1_vwmaa")
+region = Rect2(300, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wa7my"]
+atlas = ExtResource("1_vwmaa")
+region = Rect2(600, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ui2kg"]
+atlas = ExtResource("1_vwmaa")
+region = Rect2(900, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8cvst"]
+atlas = ExtResource("1_vwmaa")
+region = Rect2(1200, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ncglf"]
+atlas = ExtResource("1_vwmaa")
+region = Rect2(1500, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1xx6"]
+atlas = ExtResource("1_vwmaa")
+region = Rect2(1800, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xuluo"]
+atlas = ExtResource("1_vwmaa")
+region = Rect2(2100, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqwuw"]
+atlas = ExtResource("1_vwmaa")
+region = Rect2(2400, 0, 300, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mnlna"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msk4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2yvaj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wa7my")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ui2kg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8cvst")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ncglf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1xx6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xuluo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqwuw")
+}],
+"loop": true,
+"name": &"TP",
+"speed": 12.0
+}]
+
+[node name="SendMarker" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_mnlna")
+animation = &"TP"
+frame_progress = 0.909395
+script = ExtResource("2_a6cfi")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.75
+autostart = true
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

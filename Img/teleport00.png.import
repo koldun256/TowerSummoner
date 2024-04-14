@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bearfe8l70bp8"
-path="res://.godot/imported/fortress.png-a85355be665302b170ae763c92362922.ctex"
+uid="uid://dk0n0bqb0sgr7"
+path="res://.godot/imported/teleport00.png-57ae4bd0ed119f3adde6351e18650ffe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Img/fortress.png"
-dest_files=["res://.godot/imported/fortress.png-a85355be665302b170ae763c92362922.ctex"]
+source_file="res://Img/teleport00.png"
+dest_files=["res://.godot/imported/teleport00.png-57ae4bd0ed119f3adde6351e18650ffe.ctex"]
 
 [params]
 

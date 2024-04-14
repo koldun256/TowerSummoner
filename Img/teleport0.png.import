@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs1v88c5dnwvl"
-path="res://.godot/imported/seal.png-b26bb6e03615958b2fb6389b3f36c006.ctex"
+uid="uid://b1ii0xvpd3ehy"
+path="res://.godot/imported/teleport0.png-e50d6542069e6293531d5e0fca71fd12.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/seal.png"
-dest_files=["res://.godot/imported/seal.png-b26bb6e03615958b2fb6389b3f36c006.ctex"]
+source_file="res://Img/teleport0.png"
+dest_files=["res://.godot/imported/teleport0.png-e50d6542069e6293531d5e0fca71fd12.ctex"]
 
 [params]
 

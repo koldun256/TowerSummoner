@@ -8,12 +8,16 @@ var attack_cd = 0
 @export var speed = 100
 var tower
 
+@onready var anim = get_node("AnimatedSprite2D")
+
 func _ready():
 	tower = get_node('../Tower')
 	get_tree().get_first_node_in_group('Player').connect('on_tp', on_tp)
+	anim.play("Idle")
 
 func take_damage(d):
 	$HPBar.take_damage(d)
+	anim.play("GetDamage")
 
 func on_tp(unit, to_tower):
 	if unit == self:
@@ -38,6 +42,7 @@ func choose_target():
 
 func attack(target):
 	target.take_damage(damage)
+	anim.play("Attack")
 
 func _process(delta):
 	if target == null or not target.is_node_ready():
@@ -54,7 +59,12 @@ func _process(delta):
 		return
 		
 	var direction = (target.global_position - position).normalized()
+	if direction.x>0:
+		anim.flip_h=true
+	else:
+		anim.flip_h=false
 	position += direction * speed * delta
+	anim.play("Move")
 	
 func die():
 	queue_free()
