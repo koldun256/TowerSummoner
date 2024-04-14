@@ -37,6 +37,7 @@ position = Vector2(-32.4232, 137)
 shape = SubResource("CircleShape2D_esqoi")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
 autostart = true
 
 [connection signal="body_entered" from="SummonAura" to="." method="_on_summon_aura_body_entered"]

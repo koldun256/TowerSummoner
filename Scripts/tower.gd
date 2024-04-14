@@ -1,6 +1,8 @@
 extends Sprite2D
 
 @export var isHeal=false
+@export var isBee=false
+var bee:= preload("res://Scenes/Beeeee.tscn")
 @export var heal_amount = 20
 var canHeal=false
 
@@ -23,3 +25,8 @@ func heal(summon):
 func _on_timer_timeout():
 	if isHeal:
 		canHeal=true
+	if isBee:
+		var newbee=bee.instantiate()
+		add_child(newbee)
+		newbee.global_position=gen_summon_pos()
+		

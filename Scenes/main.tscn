@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dmowp8kco4a1c"]
+[gd_scene load_steps=13 format=3 uid="uid://dmowp8kco4a1c"]
 
 [ext_resource type="PackedScene" uid="uid://cyomu7y58wk4f" path="res://Scenes/map.tscn" id="1_ojirv"]
 [ext_resource type="PackedScene" uid="uid://bxl8qqu3dindo" path="res://Scenes/main_camera.tscn" id="3_1to61"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dtvsvkash0tp7" path="res://Scenes/hill_tower.tscn" id="10_024id"]
 [ext_resource type="PackedScene" uid="uid://cqst23wousgis" path="res://Scenes/capybara.tscn" id="10_nvhov"]
 [ext_resource type="PackedScene" path="res://Scenes/slave_shop.tscn" id="11_oi016"]
+[ext_resource type="PackedScene" uid="uid://b4je0y7rpbs8r" path="res://Scenes/Beetower.tscn" id="12_1h807"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -62,6 +63,9 @@ position = Vector2(1475, 202)
 
 [node name="Capybara" parent="." instance=ExtResource("10_nvhov")]
 position = Vector2(-90, 286)
+
+[node name="Tower4" parent="." instance=ExtResource("12_1h807")]
+position = Vector2(-1224, 144)
 
 [connection signal="set_target" from="Map" to="Player/Char" method="set_target"]
 [connection signal="close_shop" from="SlaveShop" to="CanvasLayer/ShopUI" method="hide_shop"]
