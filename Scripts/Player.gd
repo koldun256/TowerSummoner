@@ -9,7 +9,7 @@ var tp_cd = 0
 var close_tower = null
 signal on_tp(unit: Node2D, tower: Node2D)
 signal on_balance_change(balance)
-var coins = 0
+var coins = 10
 var unhandled = true
 @onready var anim = get_node("AnimatedSprite2D")
 

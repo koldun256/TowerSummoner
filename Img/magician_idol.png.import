@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bndov62jufoht"
-path="res://.godot/imported/magician_idol.png-017e081c609eab1114179992601799e2.ctex"
+path="res://.godot/imported/magician_idol.png-92efd8cd5fabbbaa60995e60a008267b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Img/magician_idol.png"
-dest_files=["res://.godot/imported/magician_idol.png-017e081c609eab1114179992601799e2.ctex"]
+source_file="res://img/magician_idol.png"
+dest_files=["res://.godot/imported/magician_idol.png-92efd8cd5fabbbaa60995e60a008267b.ctex"]
 
 [params]
 

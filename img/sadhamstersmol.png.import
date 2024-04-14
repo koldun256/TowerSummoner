@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://7mccsg65d0ca"
-path="res://.godot/imported/sadhamstersmol.png-ebd0d9d2d0dbca501d76c066dc1b2158.ctex"
+path="res://.godot/imported/sadhamstersmol.png-49dc5c26dd2454e5aca9bace3da0a3cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Img/sadhamstersmol.png"
-dest_files=["res://.godot/imported/sadhamstersmol.png-ebd0d9d2d0dbca501d76c066dc1b2158.ctex"]
+source_file="res://img/sadhamstersmol.png"
+dest_files=["res://.godot/imported/sadhamstersmol.png-49dc5c26dd2454e5aca9bace3da0a3cf.ctex"]
 
 [params]
 

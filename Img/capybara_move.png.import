@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c04e5a7b0nlh5"
-path="res://.godot/imported/capybara_move.png-7d2d8116292bbfce8a6bc69ea1b4cfff.ctex"
+path="res://.godot/imported/capybara_move.png-0e7b02d4f2831ced9cb74c53cbc28845.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Img/capybara_move.png"
-dest_files=["res://.godot/imported/capybara_move.png-7d2d8116292bbfce8a6bc69ea1b4cfff.ctex"]
+source_file="res://img/capybara_move.png"
+dest_files=["res://.godot/imported/capybara_move.png-0e7b02d4f2831ced9cb74c53cbc28845.ctex"]
 
 [params]
 

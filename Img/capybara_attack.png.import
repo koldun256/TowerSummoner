@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmgpy3y11drs7"
-path="res://.godot/imported/capybara_attack.png-a5c6893fee0a7c6dca973f02fcbcc155.ctex"
+path="res://.godot/imported/capybara_attack.png-ee06d69358c7dd764d965992854a7c2b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Img/capybara_attack.png"
-dest_files=["res://.godot/imported/capybara_attack.png-a5c6893fee0a7c6dca973f02fcbcc155.ctex"]
+source_file="res://img/capybara_attack.png"
+dest_files=["res://.godot/imported/capybara_attack.png-ee06d69358c7dd764d965992854a7c2b.ctex"]
 
 [params]
 

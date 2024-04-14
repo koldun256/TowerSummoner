@@ -19,7 +19,8 @@ func _ready():
 	tower = get_tree().get_first_node_in_group('Shop')
 	get_tree().get_first_node_in_group('Player').connect('on_tp', on_tp)
 	anim.play("Idle")
-	
+	if not portrait:
+		return
 	var hpui = hpui_prefab.instantiate()
 	add_child(hpui)
 	hpui.bind(portrait, $HPBar)
@@ -79,12 +80,12 @@ func _process(delta):
 		attack_cd = attack_interval
 		return
 		
-	var direction = (target.global_position - position).normalized()
+	var direction = (target.global_position - global_position).normalized()
 	if direction.x>0:
 		anim.flip_h=true
 	else:
 		anim.flip_h=false
-	position += direction * speed * delta
+	global_position += direction * speed * delta
 	anim.play("Move")
 	
 func die():
