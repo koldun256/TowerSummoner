@@ -31,6 +31,12 @@ func _ready():
 	randomnum = rng.randf()
 	#point2move = get_circle_position(randomnum)
 	target2attack=get_closest_target()
+	
+	get_tree().get_first_node_in_group('Player').connect('on_tp', on_tp)
+
+func on_tp(unit, to_tower):
+	target2attack = get_closest_target()
+	state = ATTACK
 
 func die():
 	print("oh no im dead")

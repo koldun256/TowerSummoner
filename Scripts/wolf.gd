@@ -10,9 +10,15 @@ var tower
 
 func _ready():
 	tower = get_node('../Tower')
+	get_tree().get_first_node_in_group('Player').connect('on_tp', on_tp)
 
 func take_damage(d):
 	$HPBar.take_damage(d)
+
+func on_tp(unit, to_tower):
+	if unit == self:
+		tower = to_tower
+	target = choose_target()
 
 func choose_target():
 	var nearest_distance = 99999
@@ -34,13 +40,10 @@ func attack(target):
 	target.take_damage(damage)
 
 func _process(delta):
-	target = choose_target()
-	if target == null:
-		return
-	#if target == null or not target.is_node_ready():
-		#target = choose_target()
-		#if target == null:
-			#return
+	if target == null or not target.is_node_ready():
+		target = choose_target()
+		if target == null:
+			return
 			
 	if global_position.distance_to(target.global_position) <= attack_range:
 		if attack_cd > 0:

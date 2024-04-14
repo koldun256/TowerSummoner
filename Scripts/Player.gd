@@ -5,6 +5,7 @@ var target = null
 @onready var marker = get_node("../Marker")
 @export var tower_interact_range = 100
 var close_tower = null
+signal on_tp(unit: Node2D, tower: Node2D)
 
 func set_target(new_target):
 	target = new_target
@@ -27,7 +28,11 @@ func select_summon(pos):
 				min_distance = dist
 				unit = summon
 	
+	if unit == null:
+		return
+		
 	unit.global_position = close_tower.gen_summon_pos()
+	on_tp.emit(unit, close_tower)
 	
 func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_left_click"):
