@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbb0ubje4cna"]
+[gd_scene load_steps=5 format=3 uid="uid://db480eknsq4qn"]
 
 [ext_resource type="Script" path="res://Scripts/wolf.gd" id="1_qmgvr"]
-[ext_resource type="PackedScene" uid="uid://ctjjekc816lvj" path="res://Scenes/hpbar.tscn" id="2_jcywb"]
-[ext_resource type="Texture2D" uid="uid://c5h88af6udihk" path="res://img/bee.png" id="3_wtgo8"]
+[ext_resource type="PackedScene" path="res://Scenes/hpbar.tscn" id="2_jcywb"]
+[ext_resource type="Texture2D" uid="uid://c5h88af6udihk" path="res://Img/bee.png" id="3_wtgo8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y4hft"]
 animations = [{
@@ -44,7 +44,7 @@ position = Vector2(646, 168)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_qmgvr")
 attack_range = 100.0
-damage = 2
+damage = 20
 speed = 150
 
 [node name="HPBar" parent="." instance=ExtResource("2_jcywb")]

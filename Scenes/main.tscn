@@ -1,17 +1,17 @@
 [gd_scene load_steps=13 format=3 uid="uid://dmowp8kco4a1c"]
 
 [ext_resource type="PackedScene" uid="uid://cyomu7y58wk4f" path="res://Scenes/map.tscn" id="1_ojirv"]
-[ext_resource type="Texture2D" uid="uid://dqtggdujmdtk3" path="res://img/grass.png" id="2_eat2v"]
+[ext_resource type="Texture2D" uid="uid://dqtggdujmdtk3" path="res://Img/grass.png" id="2_eat2v"]
 [ext_resource type="PackedScene" uid="uid://bxl8qqu3dindo" path="res://Scenes/main_camera.tscn" id="3_1to61"]
 [ext_resource type="PackedScene" uid="uid://c0n4m2o6meanc" path="res://Scenes/char.tscn" id="4_ffafk"]
 [ext_resource type="PackedScene" uid="uid://cgkyrrq8o4ybr" path="res://Scenes/tower.tscn" id="5_6kba7"]
-[ext_resource type="PackedScene" uid="uid://blce3jmf0mlm" path="res://Scenes/coins_indicator.tscn" id="5_jawvl"]
+[ext_resource type="PackedScene" path="res://Scenes/coins_indicator.tscn" id="5_jawvl"]
 [ext_resource type="PackedScene" uid="uid://e68tldlowtih" path="res://Scenes/shop_ui.tscn" id="6_davag"]
 [ext_resource type="PackedScene" uid="uid://mw8ckf7lfxna" path="res://Scenes/enemy_spawner.tscn" id="6_xouyh"]
-[ext_resource type="PackedScene" uid="uid://dpejawnyr3pjy" path="res://Scenes/hpui_container.tscn" id="7_drq8h"]
-[ext_resource type="PackedScene" uid="uid://d3osoxp65yl1q" path="res://Scenes/slave_shop.tscn" id="11_oi016"]
-[ext_resource type="PackedScene" uid="uid://b1qdyyic0y1ay" path="res://Scenes/hill_tower.tscn" id="13_lgogx"]
-[ext_resource type="PackedScene" uid="uid://bfqkt0c4llelb" path="res://Scenes/Beetower.tscn" id="14_txg8f"]
+[ext_resource type="PackedScene" path="res://Scenes/hpui_container.tscn" id="7_drq8h"]
+[ext_resource type="PackedScene" path="res://Scenes/slave_shop.tscn" id="11_oi016"]
+[ext_resource type="PackedScene" uid="uid://dtvsvkash0tp7" path="res://Scenes/hill_tower.tscn" id="13_lgogx"]
+[ext_resource type="PackedScene" uid="uid://b4je0y7rpbs8r" path="res://Scenes/Beetower.tscn" id="14_txg8f"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -19,8 +19,12 @@
 scale = Vector2(4.14857, 4.14857)
 texture = ExtResource("2_eat2v")
 
+[node name="Timer" type="Timer" parent="Map"]
+wait_time = 5.0
+autostart = true
+
 [node name="MainCamera" parent="." instance=ExtResource("3_1to61")]
-zoom = Vector2(0.7, 0.7)
+zoom = Vector2(0.5, 0.5)
 speed = 4000.0
 v_margin = 200
 h_margin = 200
@@ -32,6 +36,11 @@ speed = 500.0
 
 [node name="Tower3" parent="." instance=ExtResource("5_6kba7")]
 position = Vector2(1792, -802)
+heal_amount = 0
+
+[node name="HPBar" parent="Tower3" index="1"]
+max_health = 3000
+health = 3000
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -68,12 +77,15 @@ position = Vector2(617, 1255)
 
 [node name="HillTower" parent="." instance=ExtResource("13_lgogx")]
 position = Vector2(-2002, -1037)
+heal_amount = 3
 
 [node name="Tower" parent="." instance=ExtResource("14_txg8f")]
 position = Vector2(-1899, 311)
 
 [connection signal="set_target" from="Map" to="Player/Char" method="set_target"]
+[connection signal="timeout" from="Map/Timer" to="Map" method="_on_timer_timeout"]
 [connection signal="close_shop" from="SlaveShop" to="CanvasLayer/ShopUI" method="hide_shop"]
 [connection signal="open_shop" from="SlaveShop" to="CanvasLayer/ShopUI" method="show_shop"]
 
 [editable path="Player"]
+[editable path="Tower3"]
