@@ -1,6 +1,8 @@
 extends Node2D
 
-var enemy_node:= preload("res://Scenes/enemy.tscn")
+var enemy_node:= preload("res://Scenes/Cat.tscn")
+#var enemy_node:= preload("res://Scenes/Josuke.tscn")
+#var enemy_node:= preload("res://Scenes/enemy.tscn")
 
 # Периодичность спавна в секундах
 @export var spawn_interval: float = 2.0

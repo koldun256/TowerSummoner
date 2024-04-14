@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://c7lo7gvkqd3l1"]
+[gd_scene load_steps=10 format=3 uid="uid://dcu382qo4xxvd"]
 
-[ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_50a6w"]
-[ext_resource type="Texture2D" uid="uid://co1tls5yhnhf8" path="res://Img/skull_idol.png" id="2_oq2y5"]
-[ext_resource type="PackedScene" path="res://Scenes/hpbar.tscn" id="3_j3gb6"]
-[ext_resource type="Texture2D" uid="uid://i8iuuwdm7eee" path="res://Img/skull_attack.png" id="4_jipaa"]
-[ext_resource type="Texture2D" uid="uid://dxnonoyxyvn1l" path="res://Img/skull_damage.png" id="5_u37uw"]
-[ext_resource type="Texture2D" uid="uid://dy5nvsqxypr0v" path="res://Img/skull_move.png" id="6_y63xk"]
+[ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_a6eff"]
+[ext_resource type="Texture2D" uid="uid://co1tls5yhnhf8" path="res://Img/skull_idol.png" id="2_itc0u"]
+[ext_resource type="PackedScene" path="res://Scenes/hpbar.tscn" id="3_c4di4"]
+[ext_resource type="Texture2D" uid="uid://bexj16xvha6dr" path="res://Img/shoesuke_attack.png" id="5_qe46t"]
+[ext_resource type="Texture2D" uid="uid://dthfbffcnmgwp" path="res://Img/shoesuke_idol.png" id="6_qtltm"]
+[ext_resource type="Texture2D" uid="uid://gtb3wge84nj7" path="res://Img/shoesuke_damage.png" id="6_r4ep2"]
+[ext_resource type="Texture2D" uid="uid://cvol87da3h4tr" path="res://Img/shoesuke_move.png" id="7_nohom"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7sny8"]
 radius = 331.003
@@ -14,27 +15,21 @@ radius = 331.003
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_oq2y5")
+"texture": ExtResource("6_qtltm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_jipaa")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_oq2y5")
+"texture": ExtResource("5_qe46t")
 }],
 "loop": true,
 "name": &"Attack",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 3.0,
-"texture": ExtResource("5_u37uw")
+"duration": 1.0,
+"texture": ExtResource("6_qtltm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_u37uw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_u37uw")
+"texture": ExtResource("6_r4ep2")
 }],
 "loop": true,
 "name": &"GetDamage",
@@ -42,7 +37,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_oq2y5")
+"texture": ExtResource("6_qtltm")
 }],
 "loop": true,
 "name": &"Idle",
@@ -50,24 +45,27 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_y63xk")
+"texture": ExtResource("6_qtltm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_oq2y5")
+"texture": ExtResource("7_nohom")
 }],
 "loop": true,
 "name": &"Move",
 "speed": 5.0
 }]
 
-[node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
+[node name="Josuke" type="CharacterBody2D" groups=["Enemy"]]
 scale = Vector2(0.25, 0.25)
 safe_margin = 0.001
-script = ExtResource("1_50a6w")
+script = ExtResource("1_a6eff")
+SPEED = 100.0
+damage = 6.0
+attack_delay = 3.0
 attack_radius = 200.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-15.44, 1.5)
+position = Vector2(0, -200)
 shape = SubResource("CircleShape2D_7sny8")
 disabled = true
 
@@ -75,24 +73,27 @@ disabled = true
 visible = false
 position = Vector2(-40, 4)
 scale = Vector2(2.77333, 2.73333)
-texture = ExtResource("2_oq2y5")
+texture = ExtResource("2_itc0u")
 
-[node name="HPBar" parent="." instance=ExtResource("3_j3gb6")]
+[node name="HPBar" parent="." instance=ExtResource("3_c4di4")]
 offset_left = -4.0
 offset_top = 240.0
 offset_right = -4.0
 offset_bottom = 240.0
+max_health = 200
+health = 200
 
 [node name="AttackTimer" type="Timer" parent="."]
 wait_time = 0.8
 autostart = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-12, -288)
 scale = Vector2(3.58, 3.58)
 sprite_frames = SubResource("SpriteFrames_1vt8q")
 animation = &"Attack"
-frame = 2
-frame_progress = 0.505924
+frame = 1
+frame_progress = 0.0217002
 
 [connection signal="death" from="HPBar" to="." method="die"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
