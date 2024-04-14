@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://dmowp8kco4a1c"]
+[gd_scene load_steps=15 format=3 uid="uid://dmowp8kco4a1c"]
 
 [ext_resource type="PackedScene" uid="uid://cyomu7y58wk4f" path="res://Scenes/map.tscn" id="1_ojirv"]
+[ext_resource type="Script" path="res://Scenes/game.gd" id="1_w60y2"]
 [ext_resource type="Texture2D" uid="uid://dqtggdujmdtk3" path="res://img/grass.png" id="2_eat2v"]
 [ext_resource type="PackedScene" uid="uid://bxl8qqu3dindo" path="res://Scenes/main_camera.tscn" id="3_1to61"]
 [ext_resource type="PackedScene" uid="uid://c0n4m2o6meanc" path="res://Scenes/char.tscn" id="4_ffafk"]
@@ -13,7 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://b1qdyyic0y1ay" path="res://Scenes/hill_tower.tscn" id="13_lgogx"]
 [ext_resource type="PackedScene" uid="uid://bfqkt0c4llelb" path="res://Scenes/Beetower.tscn" id="14_txg8f"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_ixjw5"]
+font_size = 100
+
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_w60y2")
 
 [node name="Map" parent="." instance=ExtResource("1_ojirv")]
 scale = Vector2(4.14857, 4.14857)
@@ -51,6 +56,13 @@ offset_right = -0.320004
 offset_bottom = -1345.64
 alignment = 1
 
+[node name="Timer" type="Label" parent="CanvasLayer"]
+offset_left = 42.0
+offset_top = 947.0
+offset_right = 82.0
+offset_bottom = 987.0
+label_settings = SubResource("LabelSettings_ixjw5")
+
 [node name="EnemySpawner" parent="." instance=ExtResource("6_xouyh")]
 position = Vector2(769, -34)
 wave_interval = 10
@@ -73,7 +85,11 @@ position = Vector2(-2002, -1037)
 position = Vector2(-1899, 311)
 
 [connection signal="set_target" from="Map" to="Player/Char" method="set_target"]
+[connection signal="on_destroy" from="Tower3" to="." method="destroy_tower"]
 [connection signal="close_shop" from="SlaveShop" to="CanvasLayer/ShopUI" method="hide_shop"]
+[connection signal="on_destroy" from="SlaveShop" to="." method="destroy_tower"]
 [connection signal="open_shop" from="SlaveShop" to="CanvasLayer/ShopUI" method="show_shop"]
+[connection signal="on_destroy" from="HillTower" to="." method="destroy_tower"]
+[connection signal="on_destroy" from="Tower" to="." method="destroy_tower"]
 
 [editable path="Player"]

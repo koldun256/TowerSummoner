@@ -7,6 +7,7 @@ var bee:= preload("res://Scenes/Beeeee.tscn")
 var canHeal=false
 @export var portrait: Texture2D
 @onready var hpui_prefab = preload("res://hpui.tscn")
+signal on_destroy
 
 func _ready():
 	var hpui = hpui_prefab.instantiate()
@@ -16,6 +17,7 @@ func take_damage(d):
 	$HPBar.take_damage(d)
 
 func die():
+	on_destroy.emit()
 	queue_free()
 
 func gen_summon_pos():

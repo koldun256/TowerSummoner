@@ -4,7 +4,7 @@ signal close_shop
 
 @export var portrait: Texture2D
 @onready var hpui_prefab = preload("res://hpui.tscn")
-
+signal on_destroy
 var isHeal=false
 
 func _ready():
@@ -16,6 +16,7 @@ func take_damage(d):
 	$HPBar.take_damage(d)
 
 func die():
+	on_destroy.emit()
 	queue_free()
 
 func gen_summon_pos():

@@ -64,7 +64,20 @@ func attack(target):
 	projectile.global_position = global_position
 	anim.play("Attack")
 
+func nearest_tower():
+	var min_d = INF
+	var nearest_tower = null
+	for tower in get_tree().get_nodes_in_group('Building'):
+		if tower.global_position.distance_to(global_position) < min_d:
+			min_d = tower.global_position.distance_to(global_position)
+			nearest_tower = tower
+	return nearest_tower
+
 func _process(delta):
+	if not tower:
+		tower = nearest_tower()
+		if not tower:
+			return
 	if tower.isHeal:
 		tower.heal(self)
 	
