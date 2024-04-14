@@ -16,6 +16,7 @@ offset_left = 2.45923
 offset_top = 134.978
 offset_right = 2.45923
 offset_bottom = 134.978
-health = 100
+max_health = 300
+health = 300
 
 [connection signal="death" from="HPBar" to="." method="die"]

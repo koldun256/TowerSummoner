@@ -29,14 +29,13 @@ func _ready():
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
 	randomnum = rng.randf()
-	#point2move = get_circle_position(randomnum)
 	target2attack=get_closest_target()
 	
 	get_tree().get_first_node_in_group('Player').connect('on_tp', on_tp)
 
 func on_tp(unit, to_tower):
 	target2attack = get_closest_target()
-	state = ATTACK
+	state = SURROUND
 
 func die():
 	print("oh no im dead")
@@ -88,21 +87,12 @@ func get_closest_target():
 	var nearest_distance = 99999
 	var nearest_node: Node2D = null
 	
-	for node in get_tree().get_nodes_in_group("Summon"):
-		if node is Node2D:
+	for group in ['Summon', 'Targets']:
+		for node in get_tree().get_nodes_in_group(group):
 			var distance = global_position.distance_to(node.global_position)
 			if distance < nearest_distance:
 				nearest_distance = distance
 				nearest_node = node
-	
-	# Итерируемся по всем нодам на сцене
-	if nearest_node == null:
-		for node in get_tree().get_nodes_in_group("Targets"):
-			if node is Node2D:
-				var distance = global_position.distance_to(node.global_position)
-				if distance < nearest_distance:
-					nearest_distance = distance
-					nearest_node = node
 
 	return nearest_node
 	
