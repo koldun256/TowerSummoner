@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bnqi3bjloh48u"]
 
-[ext_resource type="Texture2D" uid="uid://caelxkk2ovvhj" path="res://img/images.jpg" id="1_pfwwv"]
+[ext_resource type="Texture2D" uid="uid://caelxkk2ovvhj" path="res://Img/images.jpg" id="1_pfwwv"]
 [ext_resource type="Script" path="res://Scripts/wolf.gd" id="2_gj3qv"]
-[ext_resource type="PackedScene" uid="uid://ctjjekc816lvj" path="res://Scenes/hpbar.tscn" id="3_5eupl"]
+[ext_resource type="PackedScene" path="res://Scenes/hpbar.tscn" id="3_5eupl"]
 
 [node name="Wolf" type="Sprite2D" groups=["Creature", "Summon"]]
 position = Vector2(646, 168)

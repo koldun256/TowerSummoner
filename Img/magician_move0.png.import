@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bearfe8l70bp8"
-path="res://.godot/imported/fortress.png-a85355be665302b170ae763c92362922.ctex"
+uid="uid://banxxqbjoubwt"
+path="res://.godot/imported/magician_move0.png-1cd096ba1c9c72a3d2a4bb67df856ea3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Img/fortress.png"
-dest_files=["res://.godot/imported/fortress.png-a85355be665302b170ae763c92362922.ctex"]
+source_file="res://Img/magician_move0.png"
+dest_files=["res://.godot/imported/magician_move0.png-1cd096ba1c9c72a3d2a4bb67df856ea3.ctex"]
 
 [params]
 

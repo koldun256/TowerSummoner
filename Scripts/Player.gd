@@ -7,6 +7,9 @@ var target = null
 var close_tower = null
 signal on_tp(unit: Node2D, tower: Node2D)
 
+@onready var anim = get_node("AnimatedSprite2D")
+var can_play_next_anim=false
+
 func set_target(new_target):
 	target = new_target
 	marker.position = target
@@ -37,12 +40,28 @@ func select_summon(pos):
 func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_left_click"):
 		select_summon(get_global_mouse_position())
+		anim.play("Cast")
 	if Input.is_action_just_pressed("ui_right_click"):
 		set_target(get_global_mouse_position())
+		anim.play("Move")
 		
 	if target == null:
 		return
 	var direction = (target - position).normalized()
+	if direction.x>0:
+		anim.flip_h=true
+	else:
+		anim.flip_h=false
 	move_and_collide(direction * speed * delta)
 	if (target - position).length() < speed * delta:
 		unset_target()
+		anim.play("Idle")
+
+
+
+func _on_animated_sprite_2d_animation_changed():
+	can_play_next_anim=false
+
+
+func _on_animated_sprite_2d_animation_finished():
+	can_play_next_anim=true
