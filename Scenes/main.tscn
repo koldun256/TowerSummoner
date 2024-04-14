@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://dmowp8kco4a1c"]
+[gd_scene load_steps=16 format=3 uid="uid://dmowp8kco4a1c"]
 
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_gpgsr"]
 [ext_resource type="PackedScene" uid="uid://cyomu7y58wk4f" path="res://Scenes/map.tscn" id="1_ojirv"]
 [ext_resource type="Texture2D" uid="uid://dqtggdujmdtk3" path="res://Img/grass.png" id="2_eat2v"]
 [ext_resource type="PackedScene" uid="uid://bxl8qqu3dindo" path="res://Scenes/main_camera.tscn" id="3_1to61"]
@@ -9,18 +10,21 @@
 [ext_resource type="PackedScene" uid="uid://e68tldlowtih" path="res://Scenes/shop_ui.tscn" id="6_davag"]
 [ext_resource type="PackedScene" uid="uid://mw8ckf7lfxna" path="res://Scenes/enemy_spawner.tscn" id="6_xouyh"]
 [ext_resource type="PackedScene" path="res://Scenes/hpui_container.tscn" id="7_drq8h"]
+[ext_resource type="PackedScene" uid="uid://bgrqy7kynajdv" path="res://Scenes/pause_menu.tscn" id="9_ukk1m"]
 [ext_resource type="PackedScene" path="res://Scenes/slave_shop.tscn" id="11_oi016"]
+[ext_resource type="Script" path="res://Scripts/AudioStreamPlayer2D.gd" id="13_2ya5s"]
 [ext_resource type="PackedScene" uid="uid://dtvsvkash0tp7" path="res://Scenes/hill_tower.tscn" id="13_lgogx"]
 [ext_resource type="PackedScene" uid="uid://b4je0y7rpbs8r" path="res://Scenes/Beetower.tscn" id="14_txg8f"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_gpgsr")
 
 [node name="Map" parent="." instance=ExtResource("1_ojirv")]
 scale = Vector2(4.14857, 4.14857)
 texture = ExtResource("2_eat2v")
 
 [node name="Timer" type="Timer" parent="Map"]
-wait_time = 5.0
+wait_time = 15.0
 autostart = true
 
 [node name="MainCamera" parent="." instance=ExtResource("3_1to61")]
@@ -60,6 +64,14 @@ offset_right = -0.320004
 offset_bottom = -1345.64
 alignment = 1
 
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("9_ukk1m")]
+visible = false
+offset_left = 870.0
+offset_top = 300.0
+offset_right = 870.0
+offset_bottom = 300.0
+scale = Vector2(4.23, 4.23)
+
 [node name="EnemySpawner" parent="." instance=ExtResource("6_xouyh")]
 position = Vector2(769, -34)
 wave_interval = 10
@@ -81,6 +93,11 @@ heal_amount = 3
 
 [node name="Tower" parent="." instance=ExtResource("14_txg8f")]
 position = Vector2(-1899, 311)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+max_distance = 1e+12
+attenuation = 0.0426889
+script = ExtResource("13_2ya5s")
 
 [connection signal="set_target" from="Map" to="Player/Char" method="set_target"]
 [connection signal="timeout" from="Map/Timer" to="Map" method="_on_timer_timeout"]
