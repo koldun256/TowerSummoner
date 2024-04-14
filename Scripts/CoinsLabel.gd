@@ -6,4 +6,4 @@ func _ready():
 	player.connect('on_balance_change', update_balance)
 
 func update_balance(balance):
-	text = str(balance) + ' на счету'
+	text = str(balance)

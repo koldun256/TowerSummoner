@@ -1,5 +1,8 @@
 extends Panel
 
+func _ready():
+	hide_shop()
+
 func show_shop():
 	visible = true
 	
