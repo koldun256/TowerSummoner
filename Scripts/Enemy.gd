@@ -111,8 +111,6 @@ func get_closest_target():
 				nearest_node = node
 
 	return nearest_node
-	
-
 
 func _on_animated_sprite_2d_animation_changed():
 	can_play_next_anim=false
@@ -120,3 +118,8 @@ func _on_animated_sprite_2d_animation_changed():
 
 func _on_animated_sprite_2d_animation_finished():
 	can_play_next_anim=true
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group('Projectile'):
+		take_damage(body.damage)
+		body.destroy()
