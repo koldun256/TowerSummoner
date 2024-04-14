@@ -18,6 +18,10 @@ func unset_target():
 	target = null
 	marker.visible = false
 
+func spend(amount):
+	coins -= amount
+	on_balance_change.emit(coins)
+	
 func add_coin():
 	coins += 1
 	on_balance_change.emit(coins)

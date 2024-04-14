@@ -22,6 +22,6 @@ label_settings = SubResource("LabelSettings_mkll2")
 script = ExtResource("1_dv0pv")
 
 [node name="Coinbig" type="Sprite2D" parent="."]
-position = Vector2(142, 67)
+position = Vector2(147.5, 76.5)
 scale = Vector2(1.54, 1.54)
 texture = ExtResource("2_tw600")

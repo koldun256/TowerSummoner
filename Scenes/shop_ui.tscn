@@ -1,8 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkwuq1qkypmct"]
+[gd_scene load_steps=3 format=3 uid="uid://dkwuq1qkypmct"]
 
 [ext_resource type="Script" path="res://Scripts/shop_ui.gd" id="1_grhsl"]
+[ext_resource type="PackedScene" uid="uid://doku7xeq31v6d" path="res://Scenes/shop_item.tscn" id="2_btxqu"]
 
-[node name="ShopUI" type="Panel"]
-offset_right = 1488.0
-offset_bottom = 491.0
+[node name="ShopUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 script = ExtResource("1_grhsl")
+
+[node name="ShopButton" parent="." instance=ExtResource("2_btxqu")]
+layout_mode = 0
+offset_left = 1675.0
+offset_top = 28.0
+offset_right = 1894.0
+offset_bottom = 262.0
+
+[connection signal="pressed" from="ShopButton" to="." method="buy_psina"]

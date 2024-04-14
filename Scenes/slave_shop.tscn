@@ -8,7 +8,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_esqoi"]
 radius = 189.309
 
-[node name="SlaveShop" type="Sprite2D" groups=["Targets"]]
+[node name="SlaveShop" type="Sprite2D" groups=["Shop", "Targets"]]
 z_index = 3
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_sfc8w")
