@@ -79,6 +79,7 @@ texture = ExtResource("1_g75lk")
 script = ExtResource("2_wxgen")
 speed = 1500.0
 tower_interact_range = 300
+tp_intreval = 3.0
 
 [node name="Sprite" type="Sprite2D" parent="Char"]
 visible = false

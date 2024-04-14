@@ -4,6 +4,8 @@ var target = null
 @export var speed = 500.0;
 @onready var marker = get_node("../Marker")
 @export var tower_interact_range = 100
+@export var tp_intreval = 1.0
+var tp_cd = 0
 var close_tower = null
 signal on_tp(unit: Node2D, tower: Node2D)
 signal on_balance_change(balance)
@@ -32,7 +34,7 @@ func unset_target():
 	marker.visible = false
 
 func select_summon(pos):
-	if not close_tower:
+	if not close_tower or tp_cd > 0:
 		return
 	var min_distance = INF
 	var unit = null
@@ -54,15 +56,16 @@ func select_summon(pos):
 	if unit.is_in_group('Summon'):
 		unit.tower = close_tower
 	unit.retarget()
-	
+	tp_cd = tp_intreval
 	var get_particle=get_marker.instantiate()
 	add_child(get_particle)
 	get_particle.global_position=unit.global_position
 	
 	on_tp.emit(unit, close_tower)
 	
-	
 func _physics_process(delta):
+	if tp_cd > 0:
+		tp_cd -= delta
 	if Input.is_action_just_pressed("ui_left_click"):
 		if unhandled:
 			select_summon(get_global_mouse_position())
