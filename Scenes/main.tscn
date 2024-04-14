@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://bxl8qqu3dindo" path="res://Scenes/main_camera.tscn" id="3_1to61"]
 [ext_resource type="PackedScene" uid="uid://c0n4m2o6meanc" path="res://Scenes/char.tscn" id="4_ffafk"]
 [ext_resource type="PackedScene" uid="uid://cgkyrrq8o4ybr" path="res://Scenes/tower.tscn" id="5_6kba7"]
-[ext_resource type="PackedScene" uid="uid://c7lo7gvkqd3l1" path="res://Scenes/skull.tscn" id="6_8kcp8"]
 [ext_resource type="PackedScene" uid="uid://mw8ckf7lfxna" path="res://Scenes/enemy_spawner.tscn" id="6_xouyh"]
 [ext_resource type="PackedScene" uid="uid://bnqi3bjloh48u" path="res://Scenes/wolf.tscn" id="7_n7lxx"]
 [ext_resource type="PackedScene" uid="uid://bctb8r2pxybiy" path="res://Scenes/Hamster.tscn" id="8_df5v3"]
+[ext_resource type="PackedScene" uid="uid://dcu382qo4xxvd" path="res://Scenes/Josuke.tscn" id="8_xhido"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -27,14 +27,14 @@ position = Vector2(788, 572)
 position = Vector2(16, -198)
 wave_interval = 10
 
-[node name="Enemy" parent="." instance=ExtResource("6_8kcp8")]
-position = Vector2(519, -201)
-
 [node name="Wolf" parent="." instance=ExtResource("7_n7lxx")]
 position = Vector2(-141, 469)
 
 [node name="Hamster" parent="." instance=ExtResource("8_df5v3")]
 position = Vector2(-182, 218)
+
+[node name="Josuke" parent="." instance=ExtResource("8_xhido")]
+position = Vector2(243, -92)
 
 [connection signal="set_target" from="Map" to="Player/Char" method="set_target"]
 
