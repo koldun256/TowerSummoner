@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dmq486tsl3np1"
+path="res://.godot/imported/Josuke theme but it's only the good part (audio-extractor.net).mp3-e424f68fa9e4168f8d3151ccd69b7258.mp3str"
+
+[deps]
+
+source_file="res://Music/Josuke theme but it's only the good part (audio-extractor.net).mp3"
+dest_files=["res://.godot/imported/Josuke theme but it's only the good part (audio-extractor.net).mp3-e424f68fa9e4168f8d3151ccd69b7258.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
