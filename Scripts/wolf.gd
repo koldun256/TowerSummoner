@@ -8,12 +8,18 @@ var attack_cd = 0
 @export var speed = 100
 var tower
 
+@export var portrait: Texture2D
+@onready var hpui_prefab = preload("res://hpui.tscn")
 @onready var anim = get_node("AnimatedSprite2D")
 
 func _ready():
 	tower = get_tree().get_first_node_in_group('Shop')
 	get_tree().get_first_node_in_group('Player').connect('on_tp', on_tp)
 	anim.play("Idle")
+	
+	var hpui = hpui_prefab.instantiate()
+	add_child(hpui)
+	hpui.bind(portrait, $HPBar)
 
 func take_damage(d):
 	$HPBar.take_damage(d)

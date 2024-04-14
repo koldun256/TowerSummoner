@@ -8,21 +8,24 @@ font_size = 50
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
 offset_bottom = 40.0
+grow_horizontal = 0
 
 [node name="Coins" type="Label" parent="."]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 27.0
-offset_right = 129.0
-offset_bottom = 50.0
+offset_left = -126.0
+offset_top = 30.0
+offset_right = -44.0
+offset_bottom = 99.0
 text = "0"
 label_settings = SubResource("LabelSettings_mkll2")
 script = ExtResource("1_dv0pv")
 
 [node name="Coinbig" type="Sprite2D" parent="."]
-position = Vector2(147.5, 76.5)
+position = Vector2(-31, 65)
 scale = Vector2(1.54, 1.54)
 texture = ExtResource("2_tw600")

@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqst23wousgis"]
+[gd_scene load_steps=9 format=3 uid="uid://cqst23wousgis"]
 
 [ext_resource type="Script" path="res://Scripts/capybara.gd" id="1_dwqjn"]
-[ext_resource type="PackedScene" path="res://Scenes/hpbar.tscn" id="2_jld25"]
-[ext_resource type="Texture2D" uid="uid://dmgpy3y11drs7" path="res://Img/capybara_attack.png" id="4_u7nc6"]
-[ext_resource type="Texture2D" uid="uid://4sqd20fu1t2x" path="res://Img/capybara_damage.png" id="5_whbek"]
-[ext_resource type="Texture2D" uid="uid://bds0nmaa4ch8k" path="res://Img/capybara_idol.png" id="6_7bc7l"]
-[ext_resource type="Texture2D" uid="uid://c04e5a7b0nlh5" path="res://Img/capybara_move.png" id="6_14pbm"]
+[ext_resource type="PackedScene" uid="uid://ctjjekc816lvj" path="res://Scenes/hpbar.tscn" id="2_jld25"]
+[ext_resource type="Texture2D" uid="uid://dqr22cmstbexr" path="res://img/capybarasmol.png" id="2_ngid1"]
+[ext_resource type="Texture2D" uid="uid://dmgpy3y11drs7" path="res://img/capybara_attack.png" id="4_u7nc6"]
+[ext_resource type="Texture2D" uid="uid://4sqd20fu1t2x" path="res://img/capybara_damage.png" id="5_whbek"]
+[ext_resource type="Texture2D" uid="uid://bds0nmaa4ch8k" path="res://img/capybara_idol.png" id="6_7bc7l"]
+[ext_resource type="Texture2D" uid="uid://c04e5a7b0nlh5" path="res://img/capybara_move.png" id="6_14pbm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y4hft"]
 animations = [{
@@ -57,6 +58,7 @@ position = Vector2(646, 168)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_dwqjn")
 attack_range = 1000.0
+portrait = ExtResource("2_ngid1")
 
 [node name="HPBar" parent="." instance=ExtResource("2_jld25")]
 offset_left = 2.45923

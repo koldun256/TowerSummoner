@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://b7s352qws8wad"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_4u8vl"]
-[ext_resource type="Texture2D" uid="uid://co1tls5yhnhf8" path="res://Img/skull_idol.png" id="2_u1qmr"]
-[ext_resource type="PackedScene" path="res://Scenes/hpbar.tscn" id="3_b28cf"]
-[ext_resource type="Texture2D" uid="uid://i8iuuwdm7eee" path="res://Img/skull_attack.png" id="4_nwh0o"]
-[ext_resource type="Texture2D" uid="uid://dxnonoyxyvn1l" path="res://Img/skull_damage.png" id="5_6a6l6"]
-[ext_resource type="Texture2D" uid="uid://dy5nvsqxypr0v" path="res://Img/skull_move.png" id="6_qlgs8"]
+[ext_resource type="Texture2D" uid="uid://co1tls5yhnhf8" path="res://img/skull_idol.png" id="2_u1qmr"]
+[ext_resource type="PackedScene" uid="uid://ctjjekc816lvj" path="res://Scenes/hpbar.tscn" id="3_b28cf"]
+[ext_resource type="Texture2D" uid="uid://i8iuuwdm7eee" path="res://img/skull_attack.png" id="4_nwh0o"]
+[ext_resource type="Texture2D" uid="uid://dxnonoyxyvn1l" path="res://img/skull_damage.png" id="5_6a6l6"]
+[ext_resource type="Texture2D" uid="uid://dy5nvsqxypr0v" path="res://img/skull_move.png" id="6_qlgs8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1vt8q"]
 animations = [{

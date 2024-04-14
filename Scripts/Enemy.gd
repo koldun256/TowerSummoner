@@ -6,6 +6,7 @@ extends CharacterBody2D
 var attack_cd=0
 @export var attack_radius : float = 30
 @onready var coin = preload("res://Scenes/coin.tscn")
+
 var can_attack=false
 
 var target2attack

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doh6ox7meqrq5"
-path="res://.godot/imported/grass.jpg-dba26af5c05a74ec4b3af3fa08408628.ctex"
+uid="uid://dc2cqdiupuhi7"
+path="res://.godot/imported/fortresssmol.png-f2e0cbdece40390ecd96072fa86a7a60.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Img/grass.jpg"
-dest_files=["res://.godot/imported/grass.jpg-dba26af5c05a74ec4b3af3fa08408628.ctex"]
+source_file="res://img/fortresssmol.png"
+dest_files=["res://.godot/imported/fortresssmol.png-f2e0cbdece40390ecd96072fa86a7a60.ctex"]
 
 [params]
 

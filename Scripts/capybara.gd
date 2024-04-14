@@ -9,10 +9,15 @@ var attack_cd = 0
 var tower
 @onready var mandarin = preload('res://Scenes/mandarin.tscn')
 @onready var anim = get_node("AnimatedSprite2D")
+@export var portrait: Texture2D
+@onready var hpui_prefab = preload("res://hpui.tscn")
 
 func _ready():
 	tower = get_tree().get_first_node_in_group('Shop')
 	get_tree().get_first_node_in_group('Player').connect('on_tp', on_tp)
+	var hpui = hpui_prefab.instantiate()
+	add_child(hpui)
+	hpui.bind(portrait, $HPBar)
 	anim.play("Idle")
 
 func retarget():
@@ -30,6 +35,8 @@ func choose_target():
 	var nearest_enemy: Node2D = null
 
 	for enemy in get_tree().get_nodes_in_group("Enemy"): # bipki
+		if enemy.target2attack == null:
+			continue
 		if "Building" in enemy.target2attack.get_groups() and enemy.target2attack != tower:
 			continue
 		if "Summon" in enemy.target2attack.get_groups() and enemy.target2attack.tower != tower:

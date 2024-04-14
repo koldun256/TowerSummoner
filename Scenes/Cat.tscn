@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://catha4mtty22n"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_8aejn"]
-[ext_resource type="Texture2D" uid="uid://co1tls5yhnhf8" path="res://Img/skull_idol.png" id="2_r5yem"]
-[ext_resource type="PackedScene" path="res://Scenes/hpbar.tscn" id="3_bck1y"]
-[ext_resource type="Texture2D" uid="uid://bxkoq8vkews44" path="res://Img/deadratcat_attack.png" id="5_ofa4v"]
-[ext_resource type="Texture2D" uid="uid://bhekp5nlue5jl" path="res://Img/deadratcat_idol.png" id="6_3y70f"]
-[ext_resource type="Texture2D" uid="uid://cap5wllj4espl" path="res://Img/deadratcat_damage.png" id="6_wn14i"]
-[ext_resource type="Texture2D" uid="uid://c24obolevrkil" path="res://Img/deadratcat_move.png" id="7_esriv"]
+[ext_resource type="Texture2D" uid="uid://co1tls5yhnhf8" path="res://img/skull_idol.png" id="2_r5yem"]
+[ext_resource type="PackedScene" uid="uid://ctjjekc816lvj" path="res://Scenes/hpbar.tscn" id="3_bck1y"]
+[ext_resource type="Texture2D" uid="uid://bxkoq8vkews44" path="res://img/deadratcat_attack.png" id="5_ofa4v"]
+[ext_resource type="Texture2D" uid="uid://bhekp5nlue5jl" path="res://img/deadratcat_idol.png" id="6_3y70f"]
+[ext_resource type="Texture2D" uid="uid://cap5wllj4espl" path="res://img/deadratcat_damage.png" id="6_wn14i"]
+[ext_resource type="Texture2D" uid="uid://c24obolevrkil" path="res://img/deadratcat_move.png" id="7_esriv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1vt8q"]
 animations = [{

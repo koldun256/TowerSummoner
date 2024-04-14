@@ -2,6 +2,8 @@ extends Control
 
 @export var max_health = 100
 @export var health = max_health
+
+signal on_change(health)
 signal death
 
 func _ready():
@@ -13,4 +15,6 @@ func take_damage(d):
 	if health <= 0:
 		death.emit()
 		health = 0
+		return
+	on_change.emit(health)
 	$ProgressBar.value = health

@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsi34ol0c6nhn"]
+
+[ext_resource type="Script" path="res://Scripts/HPUI.gd" id="1_xvsh8"]
+[ext_resource type="Texture2D" uid="uid://c6q54lncjuwf5" path="res://img/towersmol.png" id="2_spikq"]
+
+[node name="HPUI" type="Panel"]
+custom_minimum_size = Vector2(500, 70)
+offset_right = 482.0
+offset_bottom = 60.0
+script = ExtResource("1_xvsh8")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 14.0
+offset_right = 464.0
+offset_bottom = 47.0
+show_percentage = false
+
+[node name="Portrait" type="Sprite2D" parent="."]
+position = Vector2(37.25, 28.25)
+scale = Vector2(0.595, 0.595)
+texture = ExtResource("2_spikq")

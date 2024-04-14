@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://bctb8r2pxybiy"]
+[gd_scene load_steps=9 format=3 uid="uid://27qr7h7li8ao"]
 
 [ext_resource type="Script" path="res://Scripts/wolf.gd" id="1_ib6t1"]
-[ext_resource type="PackedScene" path="res://Scenes/hpbar.tscn" id="2_pdbvd"]
-[ext_resource type="Texture2D" uid="uid://df3cf8lunkmvb" path="res://Img/sadhamster_idol.png" id="3_xnhnu"]
-[ext_resource type="Texture2D" uid="uid://dlj71rj5k67m8" path="res://Img/sadhamster_attack.png" id="4_e0ftm"]
-[ext_resource type="Texture2D" uid="uid://j0qlp6jj8n46" path="res://Img/sadhamster_damage.png" id="5_m2yvs"]
-[ext_resource type="Texture2D" uid="uid://digcygehli1ps" path="res://Img/sadhamster_move.png" id="6_afdhw"]
+[ext_resource type="Texture2D" uid="uid://7mccsg65d0ca" path="res://img/sadhamstersmol.png" id="2_fir2y"]
+[ext_resource type="PackedScene" uid="uid://ctjjekc816lvj" path="res://Scenes/hpbar.tscn" id="2_pdbvd"]
+[ext_resource type="Texture2D" uid="uid://df3cf8lunkmvb" path="res://img/sadhamster_idol.png" id="3_xnhnu"]
+[ext_resource type="Texture2D" uid="uid://dlj71rj5k67m8" path="res://img/sadhamster_attack.png" id="4_e0ftm"]
+[ext_resource type="Texture2D" uid="uid://j0qlp6jj8n46" path="res://img/sadhamster_damage.png" id="5_m2yvs"]
+[ext_resource type="Texture2D" uid="uid://digcygehli1ps" path="res://img/sadhamster_move.png" id="6_afdhw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y4hft"]
 animations = [{
@@ -59,14 +60,15 @@ attack_range = 100.0
 damage = 10
 attack_interval = 0.3
 speed = 150
+portrait = ExtResource("2_fir2y")
 
 [node name="HPBar" parent="." instance=ExtResource("2_pdbvd")]
 offset_left = 2.45923
 offset_top = 134.978
 offset_right = 2.45923
 offset_bottom = 134.978
-max_health = 200
-health = 200
+max_health = 20
+health = 20
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-2, -104)

@@ -1,9 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://cyomu7y58wk4f"]
 
-[ext_resource type="Texture2D" uid="uid://doh6ox7meqrq5" path="res://img/grass.jpg" id="1_wyxx3"]
 [ext_resource type="Script" path="res://Scripts/Map.gd" id="2_1oo6f"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_obkam"]
+load_path = "res://.godot/imported/grass.jpg-3e7fa773ccb2f4638ce7cb895024ecec.ctex"
 
 [node name="Map" type="Sprite2D"]
 scale = Vector2(6, 6)
-texture = ExtResource("1_wyxx3")
+texture = SubResource("CompressedTexture2D_obkam")
 script = ExtResource("2_1oo6f")
