@@ -8,7 +8,7 @@ var close_tower = null
 signal on_tp(unit: Node2D, tower: Node2D)
 signal on_balance_change(balance)
 var coins = 0
-
+var unhandled = true
 @onready var anim = get_node("AnimatedSprite2D")
 
 var send_marker:= preload("res://Scenes/send_marker.tscn")
@@ -64,7 +64,10 @@ func select_summon(pos):
 	
 func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_left_click"):
-		select_summon(get_global_mouse_position())
+		if unhandled:
+			select_summon(get_global_mouse_position())
+		else:
+			unhandled = true
 		
 	if Input.is_action_just_pressed("ui_right_click"):
 		set_target(get_global_mouse_position())

@@ -3,3 +3,4 @@
 [node name="ShopButton" type="Button"]
 offset_right = 219.0
 offset_bottom = 234.0
+action_mode = 0

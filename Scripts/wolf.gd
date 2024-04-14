@@ -6,6 +6,7 @@ var target = null
 @export var attack_interval = 0.8
 var attack_cd = 0
 @export var speed = 100
+var unhandled = true
 var tower
 
 @export var portrait: Texture2D
@@ -36,6 +37,8 @@ func choose_target():
 	var nearest_enemy: Node2D = null
 
 	for enemy in get_tree().get_nodes_in_group("Enemy"): # bipki
+		if enemy.target2attack == null:
+			continue
 		if "Building" in enemy.target2attack.get_groups() and enemy.target2attack != tower:
 			continue
 		if "Summon" in enemy.target2attack.get_groups() and enemy.target2attack.tower != tower:

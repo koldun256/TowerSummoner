@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://Scripts/Map.gd" id="2_1oo6f"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_obkam"]
-load_path = "res://.godot/imported/grass.jpg-3e7fa773ccb2f4638ce7cb895024ecec.ctex"
 
 [node name="Map" type="Sprite2D"]
 scale = Vector2(6, 6)

@@ -16,6 +16,7 @@ func hide_shop():
 	visible = false
 
 func buy(slave, cost):
+	player.unhandled = false
 	if player.coins >= cost:
 		player.spend(cost)
 		var new_slave = slave.instantiate()
