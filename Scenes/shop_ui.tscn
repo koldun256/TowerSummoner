@@ -12,9 +12,29 @@ script = ExtResource("1_grhsl")
 
 [node name="ShopButton" parent="." instance=ExtResource("2_btxqu")]
 layout_mode = 0
-offset_left = 1675.0
-offset_top = 28.0
-offset_right = 1894.0
-offset_bottom = 262.0
+offset_left = 1652.0
+offset_top = 801.0
+offset_right = 1871.0
+offset_bottom = 1035.0
+text = "КАПИБАРА 12 рублей"
 
-[connection signal="pressed" from="ShopButton" to="." method="buy_psina"]
+[node name="ShopButton2" parent="." instance=ExtResource("2_btxqu")]
+layout_mode = 0
+offset_left = 1391.0
+offset_top = 805.0
+offset_right = 1610.0
+offset_bottom = 1039.0
+text = "Псина 9 рублей"
+
+[node name="ShopButton3" parent="." instance=ExtResource("2_btxqu")]
+layout_mode = 0
+offset_left = 1127.0
+offset_top = 803.0
+offset_right = 1346.0
+offset_bottom = 1037.0
+text = "Хомяк 6 рублей
+"
+
+[connection signal="pressed" from="ShopButton" to="." method="buy_capybara"]
+[connection signal="pressed" from="ShopButton2" to="." method="buy_psina"]
+[connection signal="pressed" from="ShopButton3" to="." method="buy_hamster"]

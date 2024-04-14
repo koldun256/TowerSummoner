@@ -1,6 +1,8 @@
 extends Control
 
 @onready var psina = preload('res://Scenes/wolf.tscn')
+@onready var hamster = preload('res://Scenes/Hamster.tscn')
+@onready var capybara = preload('res://Scenes/capybara.tscn')
 @onready var player = get_tree().get_first_node_in_group('Player')
 @onready var shop = get_tree().get_first_node_in_group('Shop')
 
@@ -21,4 +23,10 @@ func buy(slave, cost):
 		new_slave.global_position = shop.gen_summon_pos()
 
 func buy_psina():
-	buy(psina, 2)
+	buy(psina, 9)
+	
+func buy_hamster():
+	buy(hamster, 6)
+
+func buy_capybara():
+	buy(capybara, 12)
