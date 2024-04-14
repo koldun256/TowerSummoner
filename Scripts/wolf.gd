@@ -10,6 +10,8 @@ var tower
 
 @onready var anim = get_node("AnimatedSprite2D")
 
+var send_marker:= preload("res://Scenes/send_marker.tscn")
+
 func _ready():
 	tower = get_tree().get_first_node_in_group('Shop')
 	get_tree().get_first_node_in_group('Player').connect('on_tp', on_tp)
@@ -18,6 +20,12 @@ func _ready():
 func take_damage(d):
 	$HPBar.take_damage(d)
 	anim.play("GetDamage")
+func hill(h):
+	print("Heal")
+	$HPBar.heal(h)
+	var send_particle = send_marker.instantiate()
+	add_child(send_particle)
+	send_particle.global_position=global_position
 
 func retarget():
 	target = choose_target()
@@ -46,6 +54,9 @@ func attack(target):
 	anim.play("Attack")
 
 func _process(delta):
+	if tower.isHeal:
+		tower.heal(self)
+	
 	if target == null or not target.is_node_ready():
 		target = choose_target()
 		if target == null:

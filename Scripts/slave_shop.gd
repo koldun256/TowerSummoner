@@ -2,6 +2,8 @@ extends Sprite2D
 signal open_shop
 signal close_shop
 
+var isHeal=false
+
 func take_damage(d):
 	$HPBar.take_damage(d)
 

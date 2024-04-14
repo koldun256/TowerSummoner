@@ -14,3 +14,6 @@ func take_damage(d):
 		death.emit()
 		health = 0
 	$ProgressBar.value = health
+func heal(h):
+	health+=h
+	$ProgressBar.value = health

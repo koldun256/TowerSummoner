@@ -23,10 +23,10 @@ func buy(slave, cost):
 		new_slave.global_position = shop.gen_summon_pos()
 
 func buy_psina():
-	buy(psina, 9)
+	buy(psina, 6)
 	
 func buy_hamster():
-	buy(hamster, 6)
+	buy(hamster, 4)
 
 func buy_capybara():
-	buy(capybara, 12)
+	buy(capybara, 10)
