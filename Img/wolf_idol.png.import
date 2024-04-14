@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://wtshhwe1egu3"
-path="res://.godot/imported/wolf_idol.png-9ad375fb47049278fc2e5957cc338fc7.ctex"
+path="res://.godot/imported/wolf_idol.png-9d975a3cad9282a9217131b19a543500.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/wolf_idol.png"
-dest_files=["res://.godot/imported/wolf_idol.png-9ad375fb47049278fc2e5957cc338fc7.ctex"]
+source_file="res://Img/wolf_idol.png"
+dest_files=["res://.godot/imported/wolf_idol.png-9d975a3cad9282a9217131b19a543500.ctex"]
 
 [params]
 
