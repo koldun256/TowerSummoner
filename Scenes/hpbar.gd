@@ -18,3 +18,6 @@ func take_damage(d):
 		return
 	on_change.emit(health)
 	$ProgressBar.value = health
+func heal(h):
+	health+=h
+	$ProgressBar.value = health

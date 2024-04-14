@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgkyrrq8o4ybr"]
+[gd_scene load_steps=6 format=3 uid="uid://cgkyrrq8o4ybr"]
 
-[ext_resource type="Texture2D" uid="uid://bearfe8l70bp8" path="res://img/fortress.png" id="1_41jy1"]
+[ext_resource type="Texture2D" uid="uid://bearfe8l70bp8" path="res://Img/fortress.png" id="1_41jy1"]
 [ext_resource type="Script" path="res://Scripts/tower.gd" id="2_y7v84"]
-[ext_resource type="PackedScene" uid="uid://b18nn4lhff7bi" path="res://Scenes/summon_aura.tscn" id="3_hrypm"]
-[ext_resource type="PackedScene" uid="uid://ctjjekc816lvj" path="res://Scenes/hpbar.tscn" id="3_lehqd"]
-[ext_resource type="Texture2D" uid="uid://dc2cqdiupuhi7" path="res://img/fortresssmol.png" id="3_rhbiy"]
+[ext_resource type="PackedScene" path="res://Scenes/summon_aura.tscn" id="3_hrypm"]
+[ext_resource type="PackedScene" path="res://Scenes/hpbar.tscn" id="3_lehqd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_esqoi"]
 radius = 145.959
@@ -15,7 +14,6 @@ texture = ExtResource("1_41jy1")
 centered = false
 offset = Vector2(-500, -900)
 script = ExtResource("2_y7v84")
-portrait = ExtResource("3_rhbiy")
 
 [node name="SummonAura" parent="." instance=ExtResource("3_hrypm")]
 
@@ -33,5 +31,7 @@ position = Vector2(20.4778, -140)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-32.4232, 137)
 shape = SubResource("CircleShape2D_esqoi")
+
+[node name="Timer" type="Timer" parent="."]
 
 [connection signal="death" from="HPBar" to="." method="die"]

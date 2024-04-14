@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://b4je0y7rpbs8r"]
+
+[ext_resource type="Texture2D" uid="uid://fjsosjls6bw4" path="res://Img/tower.png" id="1_10s3q"]
+[ext_resource type="Script" path="res://Scripts/tower.gd" id="2_0pai1"]
+[ext_resource type="PackedScene" path="res://Scenes/summon_aura.tscn" id="3_biu7d"]
+[ext_resource type="PackedScene" path="res://Scenes/hpbar.tscn" id="4_iid13"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_esqoi"]
+radius = 145.959
+
+[node name="Tower" type="Sprite2D" groups=["Targets"]]
+z_index = 3
+texture = ExtResource("1_10s3q")
+centered = false
+offset = Vector2(-500, -900)
+script = ExtResource("2_0pai1")
+isBee = true
+
+[node name="SummonAura" parent="." instance=ExtResource("3_biu7d")]
+
+[node name="HPBar" parent="." instance=ExtResource("4_iid13")]
+offset_left = 3.0
+offset_top = 73.0
+offset_right = 3.0
+offset_bottom = -471.0
+max_health = 1000
+health = 1000
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(20.4778, -140)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-32.4232, 137)
+shape = SubResource("CircleShape2D_esqoi")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="death" from="HPBar" to="." method="die"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

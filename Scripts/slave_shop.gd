@@ -5,6 +5,8 @@ signal close_shop
 @export var portrait: Texture2D
 @onready var hpui_prefab = preload("res://hpui.tscn")
 
+var isHeal=false
+
 func _ready():
 	var hpui = hpui_prefab.instantiate()
 	add_child(hpui)

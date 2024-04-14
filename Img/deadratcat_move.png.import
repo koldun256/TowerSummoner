@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c24obolevrkil"
-path="res://.godot/imported/deadratcat_move.png-c9be6968202efbfdfe191f0f5abc42a6.ctex"
+path="res://.godot/imported/deadratcat_move.png-9cff2e7f144d86b54d4b9b32717fe1a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/deadratcat_move.png"
-dest_files=["res://.godot/imported/deadratcat_move.png-c9be6968202efbfdfe191f0f5abc42a6.ctex"]
+source_file="res://Img/deadratcat_move.png"
+dest_files=["res://.godot/imported/deadratcat_move.png-9cff2e7f144d86b54d4b9b32717fe1a2.ctex"]
 
 [params]
 
