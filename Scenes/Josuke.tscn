@@ -1,15 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://dcu382qo4xxvd"]
+[gd_scene load_steps=10 format=3 uid="uid://dgopja53dboxe"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_a6eff"]
-[ext_resource type="Texture2D" uid="uid://co1tls5yhnhf8" path="res://Img/skull_idol.png" id="2_itc0u"]
-[ext_resource type="PackedScene" path="res://Scenes/hpbar.tscn" id="3_c4di4"]
-[ext_resource type="Texture2D" uid="uid://bexj16xvha6dr" path="res://Img/shoesuke_attack.png" id="5_qe46t"]
-[ext_resource type="Texture2D" uid="uid://dthfbffcnmgwp" path="res://Img/shoesuke_idol.png" id="6_qtltm"]
-[ext_resource type="Texture2D" uid="uid://gtb3wge84nj7" path="res://Img/shoesuke_damage.png" id="6_r4ep2"]
-[ext_resource type="Texture2D" uid="uid://cvol87da3h4tr" path="res://Img/shoesuke_move.png" id="7_nohom"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_7sny8"]
-radius = 331.003
+[ext_resource type="Texture2D" uid="uid://co1tls5yhnhf8" path="res://img/skull_idol.png" id="2_itc0u"]
+[ext_resource type="PackedScene" uid="uid://ctjjekc816lvj" path="res://Scenes/hpbar.tscn" id="3_c4di4"]
+[ext_resource type="Texture2D" uid="uid://bexj16xvha6dr" path="res://img/shoesuke_attack.png" id="5_qe46t"]
+[ext_resource type="Texture2D" uid="uid://dthfbffcnmgwp" path="res://img/shoesuke_idol.png" id="6_qtltm"]
+[ext_resource type="Texture2D" uid="uid://gtb3wge84nj7" path="res://img/shoesuke_damage.png" id="6_r4ep2"]
+[ext_resource type="Texture2D" uid="uid://cvol87da3h4tr" path="res://img/shoesuke_move.png" id="7_nohom"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1vt8q"]
 animations = [{
@@ -55,6 +52,9 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6hw7g"]
+radius = 331.003
+
 [node name="Josuke" type="CharacterBody2D" groups=["Enemy"]]
 scale = Vector2(0.25, 0.25)
 safe_margin = 0.001
@@ -63,11 +63,6 @@ SPEED = 70.0
 damage = 20.0
 attack_delay = 3.0
 attack_radius = 200.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -200)
-shape = SubResource("CircleShape2D_7sny8")
-disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
@@ -93,6 +88,14 @@ scale = Vector2(3.58, 3.58)
 sprite_frames = SubResource("SpriteFrames_1vt8q")
 animation = &"Move"
 frame_progress = 0.596251
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-15.44, 1.5)
+shape = SubResource("CircleShape2D_6hw7g")
 
 [connection signal="death" from="HPBar" to="." method="die"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
