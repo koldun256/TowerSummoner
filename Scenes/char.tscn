@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=3 uid="uid://c0n4m2o6meanc"]
 
-[ext_resource type="Texture2D" uid="uid://dkye4716awp5a" path="res://img/marker.png" id="1_g75lk"]
-[ext_resource type="Texture2D" uid="uid://bndov62jufoht" path="res://img/magician_idol.png" id="2_5amlc"]
+[ext_resource type="Texture2D" uid="uid://dkye4716awp5a" path="res://Img/marker.png" id="1_g75lk"]
+[ext_resource type="Texture2D" uid="uid://bndov62jufoht" path="res://Img/magician_idol.png" id="2_5amlc"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="2_wxgen"]
-[ext_resource type="Texture2D" uid="uid://banxxqbjoubwt" path="res://img/magician_move0.png" id="4_ah1yi"]
-[ext_resource type="Texture2D" uid="uid://dh3hlho4k2qq1" path="res://img/magician_attack.png" id="4_lf2xx"]
+[ext_resource type="Texture2D" uid="uid://banxxqbjoubwt" path="res://Img/magician_move0.png" id="4_ah1yi"]
+[ext_resource type="Texture2D" uid="uid://dh3hlho4k2qq1" path="res://Img/magician_attack.png" id="4_lf2xx"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rj7jj"]
 

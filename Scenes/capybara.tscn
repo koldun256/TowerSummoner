@@ -1,20 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://edobh7mgu07q"]
+[gd_scene load_steps=8 format=3 uid="uid://cqst23wousgis"]
 
 [ext_resource type="Script" path="res://Scripts/capybara.gd" id="1_dwqjn"]
-[ext_resource type="PackedScene" uid="uid://ctjjekc816lvj" path="res://Scenes/hpbar.tscn" id="2_jld25"]
-[ext_resource type="Texture2D" uid="uid://cfiiaa05q3qat" path="res://img/wolf_attack.png" id="3_kehik"]
-[ext_resource type="Texture2D" uid="uid://wtshhwe1egu3" path="res://img/wolf_idol.png" id="4_0sub6"]
-[ext_resource type="Texture2D" uid="uid://dm5g6i253dhlp" path="res://img/wolf_damage.png" id="5_tdeji"]
-[ext_resource type="Texture2D" uid="uid://beg1swfwqnyt5" path="res://img/wolf_move.png" id="6_s82gc"]
+[ext_resource type="PackedScene" path="res://Scenes/hpbar.tscn" id="2_jld25"]
+[ext_resource type="Texture2D" uid="uid://dmgpy3y11drs7" path="res://Img/capybara_attack.png" id="4_u7nc6"]
+[ext_resource type="Texture2D" uid="uid://4sqd20fu1t2x" path="res://Img/capybara_damage.png" id="5_whbek"]
+[ext_resource type="Texture2D" uid="uid://bds0nmaa4ch8k" path="res://Img/capybara_idol.png" id="6_7bc7l"]
+[ext_resource type="Texture2D" uid="uid://c04e5a7b0nlh5" path="res://Img/capybara_move.png" id="6_14pbm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y4hft"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_kehik")
+"texture": ExtResource("6_7bc7l")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_0sub6")
+"texture": ExtResource("4_u7nc6")
 }],
 "loop": true,
 "name": &"Attack",
@@ -22,10 +22,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_0sub6")
+"texture": ExtResource("6_7bc7l")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_tdeji")
+"texture": ExtResource("5_whbek")
 }],
 "loop": true,
 "name": &"GetDamage",
@@ -33,7 +33,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_0sub6")
+"texture": ExtResource("6_7bc7l")
 }],
 "loop": true,
 "name": &"Idle",
@@ -41,10 +41,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_0sub6")
+"texture": ExtResource("6_7bc7l")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_s82gc")
+"texture": ExtResource("6_14pbm")
 }],
 "loop": true,
 "name": &"Move",
@@ -56,7 +56,7 @@ z_index = 1
 position = Vector2(646, 168)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_dwqjn")
-attack_range = 500.0
+attack_range = 1000.0
 
 [node name="HPBar" parent="." instance=ExtResource("2_jld25")]
 offset_left = 2.45923
@@ -67,10 +67,10 @@ max_health = 300
 health = 300
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(4, -46)
+position = Vector2(-30, -164)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_y4hft")
-animation = &"GetDamage"
-frame = 1
-frame_progress = 0.0410857
+animation = &"Attack"
+frame_progress = 0.193859
 
 [connection signal="death" from="HPBar" to="." method="die"]

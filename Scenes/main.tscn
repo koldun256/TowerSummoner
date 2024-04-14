@@ -4,11 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://bxl8qqu3dindo" path="res://Scenes/main_camera.tscn" id="3_1to61"]
 [ext_resource type="PackedScene" uid="uid://c0n4m2o6meanc" path="res://Scenes/char.tscn" id="4_ffafk"]
 [ext_resource type="PackedScene" uid="uid://cgkyrrq8o4ybr" path="res://Scenes/tower.tscn" id="5_6kba7"]
-[ext_resource type="PackedScene" uid="uid://blce3jmf0mlm" path="res://Scenes/coins_indicator.tscn" id="5_jawvl"]
-[ext_resource type="PackedScene" uid="uid://dkwuq1qkypmct" path="res://Scenes/shop_ui.tscn" id="6_davag"]
+[ext_resource type="PackedScene" path="res://Scenes/coins_indicator.tscn" id="5_jawvl"]
+[ext_resource type="PackedScene" path="res://Scenes/shop_ui.tscn" id="6_davag"]
 [ext_resource type="PackedScene" uid="uid://mw8ckf7lfxna" path="res://Scenes/enemy_spawner.tscn" id="6_xouyh"]
-[ext_resource type="PackedScene" uid="uid://edobh7mgu07q" path="res://Scenes/capybara.tscn" id="10_nvhov"]
-[ext_resource type="PackedScene" uid="uid://d3osoxp65yl1q" path="res://Scenes/slave_shop.tscn" id="11_oi016"]
+[ext_resource type="PackedScene" uid="uid://bctb8r2pxybiy" path="res://Scenes/Hamster.tscn" id="9_1jqjv"]
+[ext_resource type="PackedScene" path="res://Scenes/slave_shop.tscn" id="11_oi016"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -16,11 +16,21 @@
 scale = Vector2(7.50507, 5.42188)
 
 [node name="MainCamera" parent="." instance=ExtResource("3_1to61")]
+zoom = Vector2(0.7, 0.7)
+speed = 4000.0
+v_margin = 200
+h_margin = 200
 
 [node name="Player" parent="." instance=ExtResource("4_ffafk")]
 
 [node name="Tower" parent="." groups=["Building"] instance=ExtResource("5_6kba7")]
-position = Vector2(-1332, -915)
+position = Vector2(-2608, -1147)
+
+[node name="Tower2" parent="." groups=["Building"] instance=ExtResource("5_6kba7")]
+position = Vector2(-2668, 569)
+
+[node name="Tower3" parent="." groups=["Building"] instance=ExtResource("5_6kba7")]
+position = Vector2(2807, -1347)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -29,14 +39,18 @@ position = Vector2(-1332, -915)
 [node name="ShopUI" parent="CanvasLayer" instance=ExtResource("6_davag")]
 
 [node name="EnemySpawner" parent="." instance=ExtResource("6_xouyh")]
-position = Vector2(16, -198)
+position = Vector2(2467, -305)
+wave_interval = 10
+
+[node name="EnemySpawner2" parent="." instance=ExtResource("6_xouyh")]
+position = Vector2(-2603, -377)
 wave_interval = 10
 
 [node name="SlaveShop" parent="." instance=ExtResource("11_oi016")]
-position = Vector2(1365, 244)
+position = Vector2(2628, 897)
 
-[node name="Capybara" parent="." instance=ExtResource("10_nvhov")]
-position = Vector2(423, 492)
+[node name="Hamster" parent="." instance=ExtResource("9_1jqjv")]
+position = Vector2(-185, 13)
 
 [connection signal="set_target" from="Map" to="Player/Char" method="set_target"]
 [connection signal="close_shop" from="SlaveShop" to="CanvasLayer/ShopUI" method="hide_shop"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bearfe8l70bp8"
-path="res://.godot/imported/fortress.png-a85355be665302b170ae763c92362922.ctex"
+uid="uid://bds0nmaa4ch8k"
+path="res://.godot/imported/capybara_idol.png-2d1fccb35d0c74882f9ec5cdfbed6075.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Img/fortress.png"
-dest_files=["res://.godot/imported/fortress.png-a85355be665302b170ae763c92362922.ctex"]
+source_file="res://Img/capybara_idol.png"
+dest_files=["res://.godot/imported/capybara_idol.png-2d1fccb35d0c74882f9ec5cdfbed6075.ctex"]
 
 [params]
 

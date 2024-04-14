@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://df3cf8lunkmvb"
-path="res://.godot/imported/sadhamster_idol.png-e8eccce7361b497bea39ec9c434b3c21.ctex"
+path="res://.godot/imported/sadhamster_idol.png-e18ea6fe4969c23ca495fef89b6f1aad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/sadhamster_idol.png"
-dest_files=["res://.godot/imported/sadhamster_idol.png-e8eccce7361b497bea39ec9c434b3c21.ctex"]
+source_file="res://Img/sadhamster_idol.png"
+dest_files=["res://.godot/imported/sadhamster_idol.png-e18ea6fe4969c23ca495fef89b6f1aad.ctex"]
 
 [params]
 

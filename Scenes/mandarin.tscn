@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://gh87i75vglpc"]
+[gd_scene load_steps=4 format=3 uid="uid://b8v6w726wj3l1"]
 
 [ext_resource type="Script" path="res://Scripts/mandarin.gd" id="1_hh1js"]
-[ext_resource type="Texture2D" uid="uid://r51qg1jpt5o3" path="res://img/marker.jpg" id="2_pp33s"]
+[ext_resource type="Texture2D" uid="uid://bbdyef4ms2jyh" path="res://Img/mandarin.png" id="2_15h8t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lgyvv"]
 size = Vector2(36, 36)
@@ -12,8 +12,10 @@ collision_mask = 4
 script = ExtResource("1_hh1js")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_pp33s")
+texture_filter = 2
+position = Vector2(0, -6.54)
+scale = Vector2(1.17, 1.17)
+texture = ExtResource("2_15h8t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_lgyvv")
