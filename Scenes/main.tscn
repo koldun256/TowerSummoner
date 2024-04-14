@@ -1,19 +1,24 @@
-[gd_scene load_steps=13 format=3 uid="uid://dmowp8kco4a1c"]
+[gd_scene load_steps=15 format=3 uid="uid://dmowp8kco4a1c"]
 
+[ext_resource type="Script" path="res://Scenes/game.gd" id="1_hobsm"]
 [ext_resource type="PackedScene" uid="uid://cyomu7y58wk4f" path="res://Scenes/map.tscn" id="1_ojirv"]
-[ext_resource type="Texture2D" uid="uid://dqtggdujmdtk3" path="res://Img/grass.png" id="2_eat2v"]
+[ext_resource type="Texture2D" uid="uid://dqtggdujmdtk3" path="res://img/grass.png" id="2_eat2v"]
 [ext_resource type="PackedScene" uid="uid://bxl8qqu3dindo" path="res://Scenes/main_camera.tscn" id="3_1to61"]
 [ext_resource type="PackedScene" uid="uid://c0n4m2o6meanc" path="res://Scenes/char.tscn" id="4_ffafk"]
 [ext_resource type="PackedScene" uid="uid://cgkyrrq8o4ybr" path="res://Scenes/tower.tscn" id="5_6kba7"]
-[ext_resource type="PackedScene" path="res://Scenes/coins_indicator.tscn" id="5_jawvl"]
+[ext_resource type="PackedScene" uid="uid://blce3jmf0mlm" path="res://Scenes/coins_indicator.tscn" id="5_jawvl"]
 [ext_resource type="PackedScene" uid="uid://e68tldlowtih" path="res://Scenes/shop_ui.tscn" id="6_davag"]
 [ext_resource type="PackedScene" uid="uid://mw8ckf7lfxna" path="res://Scenes/enemy_spawner.tscn" id="6_xouyh"]
-[ext_resource type="PackedScene" path="res://Scenes/hpui_container.tscn" id="7_drq8h"]
-[ext_resource type="PackedScene" path="res://Scenes/slave_shop.tscn" id="11_oi016"]
+[ext_resource type="PackedScene" uid="uid://dpejawnyr3pjy" path="res://Scenes/hpui_container.tscn" id="7_drq8h"]
+[ext_resource type="PackedScene" uid="uid://d3osoxp65yl1q" path="res://Scenes/slave_shop.tscn" id="11_oi016"]
 [ext_resource type="PackedScene" uid="uid://dtvsvkash0tp7" path="res://Scenes/hill_tower.tscn" id="13_lgogx"]
-[ext_resource type="PackedScene" uid="uid://b4je0y7rpbs8r" path="res://Scenes/Beetower.tscn" id="14_txg8f"]
+[ext_resource type="PackedScene" uid="uid://bfqkt0c4llelb" path="res://Scenes/Beetower.tscn" id="14_txg8f"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7gppj"]
+font_size = 100
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_hobsm")
 
 [node name="Map" parent="." instance=ExtResource("1_ojirv")]
 scale = Vector2(4.14857, 4.14857)
@@ -60,6 +65,16 @@ offset_right = -0.320004
 offset_bottom = -1345.64
 alignment = 1
 
+[node name="Timer" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+label_settings = SubResource("LabelSettings_7gppj")
+
 [node name="EnemySpawner" parent="." instance=ExtResource("6_xouyh")]
 position = Vector2(769, -34)
 wave_interval = 10
@@ -84,8 +99,12 @@ position = Vector2(-1899, 311)
 
 [connection signal="set_target" from="Map" to="Player/Char" method="set_target"]
 [connection signal="timeout" from="Map/Timer" to="Map" method="_on_timer_timeout"]
+[connection signal="on_destroy" from="Tower3" to="." method="destroy_tower"]
 [connection signal="close_shop" from="SlaveShop" to="CanvasLayer/ShopUI" method="hide_shop"]
+[connection signal="on_destroy" from="SlaveShop" to="." method="destroy_tower"]
 [connection signal="open_shop" from="SlaveShop" to="CanvasLayer/ShopUI" method="show_shop"]
+[connection signal="on_destroy" from="HillTower" to="." method="destroy_tower"]
+[connection signal="on_destroy" from="Tower" to="." method="destroy_tower"]
 
 [editable path="Player"]
 [editable path="Tower3"]

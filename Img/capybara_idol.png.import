@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bds0nmaa4ch8k"
-path="res://.godot/imported/capybara_idol.png-2d1fccb35d0c74882f9ec5cdfbed6075.ctex"
+path="res://.godot/imported/capybara_idol.png-0301be9c239a81dc7cddcfdef5ea97e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Img/capybara_idol.png"
-dest_files=["res://.godot/imported/capybara_idol.png-2d1fccb35d0c74882f9ec5cdfbed6075.ctex"]
+source_file="res://img/capybara_idol.png"
+dest_files=["res://.godot/imported/capybara_idol.png-0301be9c239a81dc7cddcfdef5ea97e7.ctex"]
 
 [params]
 

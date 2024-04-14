@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6q54lncjuwf5"
-path="res://.godot/imported/towersmol.png-3c365c4908f718e2d9c123159219c5b4.ctex"
+path="res://.godot/imported/towersmol.png-53bf8306799f035396866bb33a2407c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Img/towersmol.png"
-dest_files=["res://.godot/imported/towersmol.png-3c365c4908f718e2d9c123159219c5b4.ctex"]
+source_file="res://img/towersmol.png"
+dest_files=["res://.godot/imported/towersmol.png-53bf8306799f035396866bb33a2407c4.ctex"]
 
 [params]
 

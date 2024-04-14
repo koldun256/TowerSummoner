@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0nnfooywi73j"
-path="res://.godot/imported/fortress (2).png-749e1f0d19aede99f48261e9c9c79934.ctex"
+path="res://.godot/imported/fortress (2).png-53d71401a1ef2006a2e7f2db583a8f2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Img/fortress (2).png"
-dest_files=["res://.godot/imported/fortress (2).png-749e1f0d19aede99f48261e9c9c79934.ctex"]
+source_file="res://img/fortress (2).png"
+dest_files=["res://.godot/imported/fortress (2).png-53d71401a1ef2006a2e7f2db583a8f2c.ctex"]
 
 [params]
 
