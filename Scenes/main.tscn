@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dmowp8kco4a1c"]
+[gd_scene load_steps=9 format=3 uid="uid://dmowp8kco4a1c"]
 
 [ext_resource type="PackedScene" uid="uid://cyomu7y58wk4f" path="res://Scenes/map.tscn" id="1_ojirv"]
 [ext_resource type="PackedScene" uid="uid://bxl8qqu3dindo" path="res://Scenes/main_camera.tscn" id="3_1to61"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c7lo7gvkqd3l1" path="res://Scenes/enemy.tscn" id="6_8kcp8"]
 [ext_resource type="PackedScene" uid="uid://mw8ckf7lfxna" path="res://Scenes/enemy_spawner.tscn" id="6_xouyh"]
 [ext_resource type="PackedScene" uid="uid://bnqi3bjloh48u" path="res://Scenes/wolf.tscn" id="7_n7lxx"]
+[ext_resource type="PackedScene" uid="uid://nyoh0g1mlykf" path="res://Scenes/ui.tscn" id="8_ji5yx"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -31,6 +32,8 @@ position = Vector2(519, -201)
 
 [node name="Wolf" parent="." instance=ExtResource("7_n7lxx")]
 position = Vector2(-141, 469)
+
+[node name="Control" parent="." instance=ExtResource("8_ji5yx")]
 
 [connection signal="set_target" from="Map" to="Player/Char" method="set_target"]
 

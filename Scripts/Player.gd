@@ -6,6 +6,7 @@ var target = null
 @export var tower_interact_range = 100
 var close_tower = null
 signal on_tp(unit: Node2D, tower: Node2D)
+signal on_balance_change(balance: int)
 var coins = 0
 
 func set_target(new_target):
@@ -19,6 +20,7 @@ func unset_target():
 
 func add_coin():
 	coins += 1
+	on_balance_change.emit(coins)
 
 func select_summon(pos):
 	if not close_tower:
