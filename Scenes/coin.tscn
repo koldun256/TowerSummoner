@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwgegmkt67qgo"]
+
+[ext_resource type="Texture2D" uid="uid://can7u1ptk38nt" path="res://img/coin.jpg" id="1_h4xof"]
+[ext_resource type="Script" path="res://Scenes/coin.gd" id="2_lm3iq"]
+
+[node name="Sprite2D" type="Sprite2D"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_h4xof")
+script = ExtResource("2_lm3iq")

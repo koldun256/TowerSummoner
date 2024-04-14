@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var attack_delay: float = 0.8
 var attack_cd=0
 @export var attack_radius : float = 30
+@onready var coin = preload("res://Scenes/coin.tscn")
 var can_attack=false
 
 var target2attack
@@ -43,6 +44,9 @@ func on_tp(unit, to_tower):
 
 func die():
 	print("oh no im dead")
+	var instance = coin.instantiate()
+	get_parent().add_child(instance)
+	instance.global_position = global_position
 	queue_free()
 
 func choose_state():
