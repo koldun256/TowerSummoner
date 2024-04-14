@@ -11,7 +11,7 @@ var tower
 @onready var anim = get_node("AnimatedSprite2D")
 
 func _ready():
-	tower = get_node('../Tower')
+	tower = get_tree().get_first_node_in_group('Shop')
 	get_tree().get_first_node_in_group('Player').connect('on_tp', on_tp)
 	anim.play("Idle")
 
