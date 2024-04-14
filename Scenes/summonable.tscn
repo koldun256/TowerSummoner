@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://d01ht0m0psrqu"]
+[gd_scene load_steps=2 format=3 uid="uid://d01ht0m0psrqu"]
+
+[ext_resource type="Script" path="res://Scripts/summonable.gd" id="1_xcdbh"]
 
 [node name="Summonable" type="Node"]
+script = ExtResource("1_xcdbh")

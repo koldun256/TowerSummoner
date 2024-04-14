@@ -27,7 +27,7 @@ position = Vector2(16, -198)
 wave_interval = 10
 
 [node name="Enemy" parent="." instance=ExtResource("6_8kcp8")]
-position = Vector2(410, -313)
+position = Vector2(519, -201)
 
 [node name="Wolf" parent="." instance=ExtResource("7_n7lxx")]
 position = Vector2(-141, 469)

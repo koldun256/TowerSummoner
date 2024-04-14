@@ -6,16 +6,6 @@ extends Camera2D
 signal on_click(target: Node2D, click_pos: Vector2)
 var bounds
 
-func _input(event):
-	if not (event is InputEventMouseButton and event.pressed):
-		return
-	var click_pos = get_global_mouse_position()
-	for node in get_tree().get_nodes_in_group("Summon"):
-		if node.find_child("CollisionShape2D").shape.get_rect().has_point(click_pos):
-			on_click.emit(node, click_pos)
-			return
-	on_click.emit(get_node("../Map"), click_pos)
-
 func _ready():
 	var map_rect = get_node("../Map").get_global_rect()
 	var viewport_size = get_viewport().size

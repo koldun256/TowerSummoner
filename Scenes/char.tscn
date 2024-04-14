@@ -1,17 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0n4m2o6meanc"]
+[gd_scene load_steps=6 format=3 uid="uid://c0n4m2o6meanc"]
 
-[ext_resource type="Texture2D" uid="uid://bndov62jufoht" path="res://Img/magician_idol.png" id="2_5amlc"]
+[ext_resource type="Texture2D" uid="uid://bndov62jufoht" path="res://img/magician_idol.png" id="2_5amlc"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="2_wxgen"]
-[ext_resource type="Texture2D" uid="uid://r51qg1jpt5o3" path="res://Img/marker.jpg" id="3_24wp5"]
+[ext_resource type="Texture2D" uid="uid://r51qg1jpt5o3" path="res://img/marker.jpg" id="3_24wp5"]
 
-[node name="Node2D2" type="Node2D"]
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rj7jj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ep85f"]
+radius = 50.01
+
+[node name="Player" type="Node2D"]
+z_index = 1
 
 [node name="Marker" type="Sprite2D" parent="."]
 position = Vector2(1498, 1613)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_24wp5")
 
-[node name="Char" type="Sprite2D" parent="." groups=["Player"]]
+[node name="Char" type="CharacterBody2D" parent="." groups=["Player"]]
+script = ExtResource("2_wxgen")
+tower_interact_range = 300
+
+[node name="Sprite" type="Sprite2D" parent="Char"]
 scale = Vector2(0.47, 0.47)
 texture = ExtResource("2_5amlc")
-script = ExtResource("2_wxgen")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Char"]
+material = SubResource("CanvasItemMaterial_rj7jj")
+position = Vector2(2, 10)
+shape = SubResource("CircleShape2D_ep85f")
