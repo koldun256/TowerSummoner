@@ -8,7 +8,9 @@ var close_tower = null
 signal on_tp(unit: Node2D, tower: Node2D)
 
 @onready var anim = get_node("AnimatedSprite2D")
-var can_play_next_anim=false
+
+var send_marker:= preload("res://Scenes/send_marker.tscn")
+var get_marker:= preload("res://Scenes/recieve_marker.tscn")
 
 func set_target(new_target):
 	target = new_target
@@ -33,14 +35,24 @@ func select_summon(pos):
 	
 	if unit == null:
 		return
-		
+	anim.play("Cast")	
+	var send_particle = send_marker.instantiate()
+	add_child(send_particle)
+	send_particle.global_position=unit.global_position
+	
 	unit.global_position = close_tower.gen_summon_pos()
+	
+	var get_particle=get_marker.instantiate()
+	add_child(get_particle)
+	get_particle.global_position=unit.global_position
+	
 	on_tp.emit(unit, close_tower)
+	
 	
 func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_left_click"):
 		select_summon(get_global_mouse_position())
-		anim.play("Cast")
+		
 	if Input.is_action_just_pressed("ui_right_click"):
 		set_target(get_global_mouse_position())
 		anim.play("Move")
@@ -59,9 +71,4 @@ func _physics_process(delta):
 
 
 
-func _on_animated_sprite_2d_animation_changed():
-	can_play_next_anim=false
 
-
-func _on_animated_sprite_2d_animation_finished():
-	can_play_next_anim=true
