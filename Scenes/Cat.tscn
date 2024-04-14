@@ -1,0 +1,99 @@
+[gd_scene load_steps=10 format=3 uid="uid://bwl0ntp74lp74"]
+
+[ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_8aejn"]
+[ext_resource type="Texture2D" uid="uid://co1tls5yhnhf8" path="res://Img/skull_idol.png" id="2_r5yem"]
+[ext_resource type="PackedScene" path="res://Scenes/hpbar.tscn" id="3_bck1y"]
+[ext_resource type="Texture2D" uid="uid://bxkoq8vkews44" path="res://Img/deadratcat_attack.png" id="5_ofa4v"]
+[ext_resource type="Texture2D" uid="uid://bhekp5nlue5jl" path="res://Img/deadratcat_idol.png" id="6_3y70f"]
+[ext_resource type="Texture2D" uid="uid://cap5wllj4espl" path="res://Img/deadratcat_damage.png" id="6_wn14i"]
+[ext_resource type="Texture2D" uid="uid://c24obolevrkil" path="res://Img/deadratcat_move.png" id="7_esriv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7sny8"]
+radius = 219.646
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1vt8q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_3y70f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ofa4v")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_3y70f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wn14i")
+}],
+"loop": true,
+"name": &"GetDamage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_3y70f")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_3y70f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_esriv")
+}],
+"loop": true,
+"name": &"Move",
+"speed": 5.0
+}]
+
+[node name="Cat" type="CharacterBody2D" groups=["Enemy"]]
+scale = Vector2(0.25, 0.25)
+safe_margin = 0.001
+script = ExtResource("1_8aejn")
+SPEED = 200.0
+damage = 1.0
+attack_delay = 0.3
+attack_radius = 200.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-41.235, -18.79)
+scale = Vector2(1.105, 1.105)
+shape = SubResource("CircleShape2D_7sny8")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-40, 4)
+scale = Vector2(2.77333, 2.73333)
+texture = ExtResource("2_r5yem")
+
+[node name="HPBar" parent="." instance=ExtResource("3_bck1y")]
+offset_left = -4.0
+offset_top = 240.0
+offset_right = -4.0
+offset_bottom = 240.0
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.8
+autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-44, -288)
+scale = Vector2(3.805, 3.805)
+sprite_frames = SubResource("SpriteFrames_1vt8q")
+animation = &"Attack"
+frame_progress = 0.650649
+
+[connection signal="death" from="HPBar" to="." method="die"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="animation_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_changed"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

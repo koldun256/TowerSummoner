@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://bctb8r2pxybiy"]
+
+[ext_resource type="Script" path="res://Scripts/wolf.gd" id="1_ib6t1"]
+[ext_resource type="PackedScene" path="res://Scenes/hpbar.tscn" id="2_pdbvd"]
+[ext_resource type="Texture2D" uid="uid://df3cf8lunkmvb" path="res://Img/sadhamster_idol.png" id="3_xnhnu"]
+[ext_resource type="Texture2D" uid="uid://dlj71rj5k67m8" path="res://Img/sadhamster_attack.png" id="4_e0ftm"]
+[ext_resource type="Texture2D" uid="uid://j0qlp6jj8n46" path="res://Img/sadhamster_damage.png" id="5_m2yvs"]
+[ext_resource type="Texture2D" uid="uid://digcygehli1ps" path="res://Img/sadhamster_move.png" id="6_afdhw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y4hft"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_xnhnu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e0ftm")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_xnhnu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_m2yvs")
+}],
+"loop": true,
+"name": &"GetDamage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_xnhnu")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_xnhnu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_afdhw")
+}],
+"loop": true,
+"name": &"Move",
+"speed": 5.0
+}]
+
+[node name="Hamster" type="Sprite2D" groups=["Creature", "Summon"]]
+position = Vector2(646, 168)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_ib6t1")
+attack_range = 100.0
+damage = 10
+attack_interval = 0.3
+speed = 150
+
+[node name="HPBar" parent="." instance=ExtResource("2_pdbvd")]
+offset_left = 2.45923
+offset_top = 134.978
+offset_right = 2.45923
+offset_bottom = 134.978
+max_health = 200
+health = 200
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, -104)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_y4hft")
+animation = &"Attack"
+frame_progress = 0.184789
+
+[connection signal="death" from="HPBar" to="." method="die"]
