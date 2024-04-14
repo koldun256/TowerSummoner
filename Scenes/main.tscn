@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://dmowp8kco4a1c"]
+[gd_scene load_steps=17 format=3 uid="uid://dmowp8kco4a1c"]
 
 [ext_resource type="Script" path="res://Scenes/game.gd" id="1_hobsm"]
 [ext_resource type="PackedScene" uid="uid://cyomu7y58wk4f" path="res://Scenes/map.tscn" id="1_ojirv"]
 [ext_resource type="Texture2D" uid="uid://dqtggdujmdtk3" path="res://img/grass.png" id="2_eat2v"]
+[ext_resource type="Script" path="res://Scripts/Highscore.gd" id="2_ilf1h"]
 [ext_resource type="PackedScene" uid="uid://bxl8qqu3dindo" path="res://Scenes/main_camera.tscn" id="3_1to61"]
 [ext_resource type="PackedScene" uid="uid://c0n4m2o6meanc" path="res://Scenes/char.tscn" id="4_ffafk"]
 [ext_resource type="PackedScene" uid="uid://cgkyrrq8o4ybr" path="res://Scenes/tower.tscn" id="5_6kba7"]
@@ -17,8 +18,15 @@
 [sub_resource type="LabelSettings" id="LabelSettings_7gppj"]
 font_size = 100
 
+[sub_resource type="LabelSettings" id="LabelSettings_x6r66"]
+font_size = 60
+font_color = Color(0.580392, 0.580392, 0.580392, 1)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_hobsm")
+
+[node name="Highscore" type="Node" parent="."]
+script = ExtResource("2_ilf1h")
 
 [node name="Map" parent="." instance=ExtResource("1_ojirv")]
 scale = Vector2(4.14857, 4.14857)
@@ -74,6 +82,17 @@ offset_right = 20.0
 offset_bottom = 23.0
 grow_horizontal = 2
 label_settings = SubResource("LabelSettings_7gppj")
+
+[node name="HighscoreLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 101.0
+offset_right = 20.0
+offset_bottom = 184.0
+grow_horizontal = 2
+label_settings = SubResource("LabelSettings_x6r66")
 
 [node name="EnemySpawner" parent="." instance=ExtResource("6_xouyh")]
 position = Vector2(769, -34)
