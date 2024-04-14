@@ -23,6 +23,9 @@ h_margin = 200
 
 [node name="Player" parent="." instance=ExtResource("4_ffafk")]
 
+[node name="Char" parent="Player" index="1"]
+speed = 500.0
+
 [node name="Tower" parent="." groups=["Building"] instance=ExtResource("5_6kba7")]
 position = Vector2(-2608, -1147)
 
