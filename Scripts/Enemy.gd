@@ -69,7 +69,6 @@ func _physics_process(delta):
 			attack(target2attack, delta)
 
 func attack(target, delta):
-	
 	if can_play_next_anim:
 		anim.play("Idle")
 	if attack_cd > 0:

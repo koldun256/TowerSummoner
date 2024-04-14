@@ -13,6 +13,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Coins" type="Label" parent="."]
+layout_mode = 0
 offset_left = 47.0
 offset_top = 27.0
 offset_right = 129.0

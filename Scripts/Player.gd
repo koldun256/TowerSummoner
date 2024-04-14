@@ -6,11 +6,21 @@ var target = null
 @export var tower_interact_range = 100
 var close_tower = null
 signal on_tp(unit: Node2D, tower: Node2D)
+signal on_balance_change(balance)
+var coins = 0
 
 @onready var anim = get_node("AnimatedSprite2D")
 
 var send_marker:= preload("res://Scenes/send_marker.tscn")
 var get_marker:= preload("res://Scenes/recieve_marker.tscn")
+
+func add_coin():
+	coins += 1
+	on_balance_change.emit(coins)
+	
+func spend(amount):
+	coins -= amount
+	on_balance_change.emit(coins)
 
 func set_target(new_target):
 	target = new_target

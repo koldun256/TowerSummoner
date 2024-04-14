@@ -14,13 +14,14 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Map" parent="." instance=ExtResource("1_ojirv")]
+scale = Vector2(7.50507, 5.42188)
 
 [node name="MainCamera" parent="." instance=ExtResource("3_1to61")]
 
 [node name="Player" parent="." instance=ExtResource("4_ffafk")]
 
 [node name="Tower" parent="." groups=["Building"] instance=ExtResource("5_6kba7")]
-position = Vector2(-899, -337)
+position = Vector2(-1332, -915)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -39,7 +40,7 @@ position = Vector2(519, -201)
 position = Vector2(-141, 469)
 
 [node name="SlaveShop" parent="." instance=ExtResource("11_oi016")]
-position = Vector2(847, 578)
+position = Vector2(1365, 244)
 
 [connection signal="set_target" from="Map" to="Player/Char" method="set_target"]
 [connection signal="close_shop" from="SlaveShop" to="CanvasLayer/ShopUI" method="hide_shop"]

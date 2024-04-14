@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ruyponb7au3n"
-path="res://.godot/imported/magician_damage.png-4cd7bdb6c228fdbc9e234c16882fb9f8.ctex"
+uid="uid://ds3dq6an7obf4"
+path="res://.godot/imported/white.png-3f5fb1484ea9dc760c90400cc3959210.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/magician_damage.png"
-dest_files=["res://.godot/imported/magician_damage.png-4cd7bdb6c228fdbc9e234c16882fb9f8.ctex"]
+source_file="res://img/white.png"
+dest_files=["res://.godot/imported/white.png-3f5fb1484ea9dc760c90400cc3959210.ctex"]
 
 [params]
 

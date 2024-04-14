@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b18nn4lhff7bi"]
 
 [ext_resource type="Script" path="res://Scripts/SummonAura.gd" id="1_06b5h"]
-[ext_resource type="Texture2D" uid="uid://cs1v88c5dnwvl" path="res://img/seal.png" id="2_i26uo"]
+[ext_resource type="Texture2D" uid="uid://j007e8xe10y8" path="res://img/seal.png" id="2_i26uo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6iykm"]
 radius = 178.239
