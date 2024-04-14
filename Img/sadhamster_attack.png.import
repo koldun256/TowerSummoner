@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlj71rj5k67m8"
-path="res://.godot/imported/sadhamster_attack.png-334a82bcccfa66f2e95bae0d12401a3b.ctex"
+path="res://.godot/imported/sadhamster_attack.png-b2aa41d6be19bd8874e4f0d049a97733.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/sadhamster_attack.png"
-dest_files=["res://.godot/imported/sadhamster_attack.png-334a82bcccfa66f2e95bae0d12401a3b.ctex"]
+source_file="res://Img/sadhamster_attack.png"
+dest_files=["res://.godot/imported/sadhamster_attack.png-b2aa41d6be19bd8874e4f0d049a97733.ctex"]
 
 [params]
 
