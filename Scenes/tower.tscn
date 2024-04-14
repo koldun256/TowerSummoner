@@ -34,4 +34,6 @@ position = Vector2(20.4778, -140)
 position = Vector2(-32.4232, 137)
 shape = SubResource("CircleShape2D_esqoi")
 
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="death" from="HPBar" to="." method="die"]
