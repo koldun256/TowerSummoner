@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://blce3jmf0mlm"]
+
+[ext_resource type="Script" path="res://Scripts/CoinsLabel.gd" id="1_dv0pv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mkll2"]
+font_size = 50
+
+[node name="Coins" type="Label"]
+offset_left = 47.0
+offset_top = 27.0
+offset_right = 129.0
+offset_bottom = 50.0
+text = "0 на счету"
+label_settings = SubResource("LabelSettings_mkll2")
+script = ExtResource("1_dv0pv")

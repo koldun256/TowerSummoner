@@ -1,16 +1,6 @@
-extends Sprite2D
+extends Area2D
 
 @export var summon_r = 300
-
-func take_damage(d):
-	$HPBar.take_damage(d)
-	
-func die():
-	print("oh no im dead")
-	queue_free()
-
-func _ready():
-	add_to_group("Targets")
 
 func gen_summon_pos():
 	var angle = randf() * 2 * PI
@@ -18,8 +8,8 @@ func gen_summon_pos():
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player"):
-		body.close_tower = self
+		body.close_tower = get_parent()
 
 func _on_area_2d_body_exited(body):
 	if body.is_in_group("Player"):
-		body.close_tower = null
+		body.close_tower = get_parent()

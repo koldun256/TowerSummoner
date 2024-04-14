@@ -1,17 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://nyoh0g1mlykf"]
+[gd_scene load_steps=2 format=3 uid="uid://nyoh0g1mlykf"]
 
-[ext_resource type="Script" path="res://Scripts/CoinsLabel.gd" id="1_vjvh3"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_mkll2"]
-font_size = 50
+[ext_resource type="PackedScene" uid="uid://blce3jmf0mlm" path="res://Scenes/coins_indicator.tscn" id="1_x1xgv"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
-[node name="Coins" type="Label" parent="."]
-offset_left = 47.0
-offset_top = 27.0
-offset_right = 129.0
-offset_bottom = 50.0
-text = "0 на счету"
-label_settings = SubResource("LabelSettings_mkll2")
-script = ExtResource("1_vjvh3")
+[node name="Coins" parent="." instance=ExtResource("1_x1xgv")]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b18nn4lhff7bi"]
+
+[ext_resource type="Script" path="res://Scripts/SummonAura.gd" id="1_06b5h"]
+[ext_resource type="Texture2D" uid="uid://cs1v88c5dnwvl" path="res://img/seal.png" id="2_i26uo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6iykm"]
+radius = 178.239
+
+[node name="SummonAura" type="Area2D"]
+position = Vector2(-8, -6)
+scale = Vector2(2.166, 2.166)
+script = ExtResource("1_06b5h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 0.7)
+shape = SubResource("CircleShape2D_6iykm")
+
+[node name="Seal" type="Sprite2D" parent="."]
+z_as_relative = false
+scale = Vector2(1.06045, 0.71823)
+texture = ExtResource("2_i26uo")
+
+[connection signal="body_entered" from="." to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_area_2d_body_exited"]

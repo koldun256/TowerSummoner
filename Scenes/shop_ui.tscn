@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkwuq1qkypmct"]
+
+[ext_resource type="Script" path="res://Scripts/shop_ui.gd" id="1_grhsl"]
+
+[node name="ShopUI" type="Panel"]
+offset_right = 1488.0
+offset_bottom = 491.0
+script = ExtResource("1_grhsl")

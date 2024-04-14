@@ -24,6 +24,7 @@ func add_coin():
 
 func select_summon(pos):
 	if not close_tower:
+		print('not in range')
 		return
 	var min_distance = INF
 	var unit = null
@@ -36,7 +37,7 @@ func select_summon(pos):
 	
 	if unit == null:
 		return
-		
+	
 	unit.global_position = close_tower.gen_summon_pos()
 	on_tp.emit(unit, close_tower)
 	
