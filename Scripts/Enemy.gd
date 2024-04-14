@@ -103,10 +103,10 @@ func get_circle_position(random):
 	return Vector2(x, y)
 
 func get_closest_target():
-	var nearest_distance = 99999
+	var nearest_distance = INF
 	var nearest_node: Node2D = null
 	
-	for group in ['Summon', 'Targets']:
+	for group in ['Summon', 'Building']:
 		for node in get_tree().get_nodes_in_group(group):
 			var distance = global_position.distance_to(node.global_position)
 			if distance < nearest_distance:

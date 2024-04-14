@@ -16,6 +16,10 @@ var unhandled = true
 var send_marker:= preload("res://Scenes/send_marker.tscn")
 var get_marker:= preload("res://Scenes/recieve_marker.tscn")
 
+func _ready():
+	await get_tree().process_frame
+	on_balance_change.emit(coins)
+
 func add_coin():
 	coins += 1
 	on_balance_change.emit(coins)
