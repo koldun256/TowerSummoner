@@ -1,6 +1,28 @@
-[gd_scene format=3 uid="uid://doku7xeq31v6d"]
+[gd_scene load_steps=4 format=3 uid="uid://doku7xeq31v6d"]
+
+[ext_resource type="Script" path="res://Scripts/shop_item.gd" id="1_5gbpo"]
+[ext_resource type="Texture2D" uid="uid://dqr22cmstbexr" path="res://img/capybarasmol.png" id="1_6rgx1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ut01n"]
+font_size = 80
 
 [node name="ShopButton" type="Button"]
-offset_right = 219.0
-offset_bottom = 234.0
+offset_right = 256.0
+offset_bottom = 265.0
 action_mode = 0
+alignment = 2
+script = ExtResource("1_5gbpo")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(132, 144)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("1_6rgx1")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 8.0
+offset_right = 101.0
+offset_bottom = 118.0
+text = "12"
+label_settings = SubResource("LabelSettings_ut01n")

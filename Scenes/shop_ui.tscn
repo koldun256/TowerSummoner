@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://e68tldlowtih"]
+[gd_scene load_steps=6 format=3 uid="uid://e68tldlowtih"]
 
 [ext_resource type="Script" path="res://Scripts/shop_ui.gd" id="1_grhsl"]
 [ext_resource type="PackedScene" uid="uid://doku7xeq31v6d" path="res://Scenes/shop_item.tscn" id="2_btxqu"]
+[ext_resource type="Texture2D" uid="uid://7mccsg65d0ca" path="res://img/sadhamstersmol.png" id="2_x6ey7"]
+[ext_resource type="Texture2D" uid="uid://bp62rn1sabsk1" path="res://img/wolfsmol.png" id="3_fbghr"]
+[ext_resource type="Texture2D" uid="uid://dqr22cmstbexr" path="res://img/capybarasmol.png" id="4_0rbo4"]
 
 [node name="ShopUI" type="Control"]
 layout_mode = 3
@@ -9,32 +12,29 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_grhsl")
+portraits = Array[Texture2D]([ExtResource("2_x6ey7"), ExtResource("3_fbghr"), ExtResource("4_0rbo4")])
 
-[node name="ShopButton" parent="." instance=ExtResource("2_btxqu")]
+[node name="ShopButton2" parent="." instance=ExtResource("2_btxqu")]
 layout_mode = 0
 offset_left = 1652.0
 offset_top = 801.0
 offset_right = 1871.0
 offset_bottom = 1035.0
-text = "КАПИБАРА 12 рублей"
 
-[node name="ShopButton2" parent="." instance=ExtResource("2_btxqu")]
+[node name="ShopButton1" parent="." instance=ExtResource("2_btxqu")]
 layout_mode = 0
 offset_left = 1391.0
 offset_top = 805.0
 offset_right = 1610.0
 offset_bottom = 1039.0
-text = "Псина 9 рублей"
 
-[node name="ShopButton3" parent="." instance=ExtResource("2_btxqu")]
+[node name="ShopButton0" parent="." instance=ExtResource("2_btxqu")]
 layout_mode = 0
 offset_left = 1127.0
 offset_top = 803.0
 offset_right = 1346.0
 offset_bottom = 1037.0
-text = "Хомяк 6 рублей
-"
 
-[connection signal="pressed" from="ShopButton" to="." method="buy_capybara"]
-[connection signal="pressed" from="ShopButton2" to="." method="buy_psina"]
-[connection signal="pressed" from="ShopButton3" to="." method="buy_hamster"]
+[connection signal="pressed" from="ShopButton2" to="." method="buy_capybara"]
+[connection signal="pressed" from="ShopButton1" to="." method="buy_psina"]
+[connection signal="pressed" from="ShopButton0" to="." method="buy_hamster"]
