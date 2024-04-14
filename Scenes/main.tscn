@@ -77,12 +77,14 @@ position = Vector2(769, -34)
 wave_interval = 10
 width = 700
 height = 300
+wave_plus = 1
 
 [node name="EnemySpawner2" parent="." instance=ExtResource("6_xouyh")]
 position = Vector2(-1038, -681)
 wave_interval = 10
 width = 600
 height = 400
+wave_plus = 1
 
 [node name="SlaveShop" parent="." instance=ExtResource("11_oi016")]
 position = Vector2(617, 1255)

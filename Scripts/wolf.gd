@@ -64,7 +64,7 @@ func attack(target):
 	anim.play("Attack")
 
 func _process(delta):
-	if tower.isHeal:
+	if tower!=null and tower.isHeal:
 		tower.heal(self)
 	
 	if target == null or not target.is_node_ready():
