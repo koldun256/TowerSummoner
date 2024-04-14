@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://dmowp8kco4a1c"]
+[gd_scene load_steps=17 format=3 uid="uid://dmowp8kco4a1c"]
 
 [ext_resource type="PackedScene" uid="uid://cyomu7y58wk4f" path="res://Scenes/map.tscn" id="1_ojirv"]
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_tovo0"]
 [ext_resource type="Texture2D" uid="uid://dqtggdujmdtk3" path="res://Img/grass.png" id="2_eat2v"]
 [ext_resource type="PackedScene" uid="uid://bxl8qqu3dindo" path="res://Scenes/main_camera.tscn" id="3_1to61"]
 [ext_resource type="PackedScene" uid="uid://c0n4m2o6meanc" path="res://Scenes/char.tscn" id="4_ffafk"]
@@ -14,8 +15,10 @@
 [ext_resource type="PackedScene" path="res://Scenes/slave_shop.tscn" id="11_oi016"]
 [ext_resource type="PackedScene" uid="uid://dtvsvkash0tp7" path="res://Scenes/hill_tower.tscn" id="13_lgogx"]
 [ext_resource type="PackedScene" uid="uid://b4je0y7rpbs8r" path="res://Scenes/Beetower.tscn" id="14_txg8f"]
+[ext_resource type="PackedScene" uid="uid://bgrqy7kynajdv" path="res://Scenes/pause_menu.tscn" id="16_7q87a"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_tovo0")
 
 [node name="Map" parent="." instance=ExtResource("1_ojirv")]
 scale = Vector2(4.14857, 4.14857)
@@ -52,6 +55,14 @@ offset_left = 2759.04
 offset_right = -0.320004
 offset_bottom = -1345.64
 alignment = 1
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("16_7q87a")]
+visible = false
+offset_left = 826.0
+offset_top = 208.0
+offset_right = -1021.0
+offset_bottom = -769.0
+scale = Vector2(5, 5)
 
 [node name="EnemySpawner" parent="." instance=ExtResource("6_xouyh")]
 position = Vector2(2467, -305)
