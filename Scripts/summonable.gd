@@ -8,6 +8,8 @@ func summon():
 		player.unset_target()
 		
 func _on_area_2d_input_event(viewport, event, shape_idx):
+	print("enemy input event")
 	if event is InputEventMouseButton and event.pressed:
-		viewport.set_input_as_handled()
+		print("enemy clicked")
+		# viewport.set_input_as_handled()
 		summon()

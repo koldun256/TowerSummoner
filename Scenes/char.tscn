@@ -10,6 +10,7 @@
 radius = 50.01
 
 [node name="Player" type="Node2D"]
+z_index = 1
 
 [node name="Marker" type="Sprite2D" parent="."]
 position = Vector2(1498, 1613)
@@ -21,7 +22,6 @@ script = ExtResource("2_wxgen")
 tower_interact_range = 300
 
 [node name="Sprite" type="Sprite2D" parent="Char"]
-z_as_relative = false
 scale = Vector2(0.47, 0.47)
 texture = ExtResource("2_5amlc")
 

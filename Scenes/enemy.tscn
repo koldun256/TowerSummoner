@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://ctjjekc816lvj" path="res://Scenes/hpbar.tscn" id="3_j3gb6"]
 [ext_resource type="PackedScene" uid="uid://d01ht0m0psrqu" path="res://Scenes/summonable.tscn" id="4_k4kbl"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7sny8"]
-radius = 581.997
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_48tb1"]
+size = Vector2(620, 442.857)
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
 scale = Vector2(0.35, 0.35)
@@ -36,10 +36,13 @@ autostart = true
 [node name="Summonable" parent="." instance=ExtResource("4_k4kbl")]
 
 [node name="Area2D" type="Area2D" parent="."]
+z_index = 20
+priority = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-15.44, 1.5)
-shape = SubResource("CircleShape2D_7sny8")
+position = Vector2(-32.8571, -18.5714)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_48tb1")
 
 [connection signal="input_event" from="." to="Summonable" method="_on_area_2d_input_event"]
 [connection signal="death" from="HPBar" to="." method="die"]
