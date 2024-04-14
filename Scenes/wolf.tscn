@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://bnqi3bjloh48u"]
 
-[ext_resource type="Texture2D" uid="uid://wtshhwe1egu3" path="res://img/wolf_idol.png" id="1_hr7st"]
-[ext_resource type="Texture2D" uid="uid://bp62rn1sabsk1" path="res://img/wolfsmol.png" id="2_73tm4"]
+[ext_resource type="Texture2D" uid="uid://wtshhwe1egu3" path="res://Img/wolf_idol.png" id="1_hr7st"]
+[ext_resource type="Texture2D" uid="uid://bp62rn1sabsk1" path="res://Img/wolfsmol.png" id="2_73tm4"]
 [ext_resource type="Script" path="res://Scripts/wolf.gd" id="2_gj3qv"]
-[ext_resource type="PackedScene" uid="uid://ctjjekc816lvj" path="res://Scenes/hpbar.tscn" id="3_5eupl"]
-[ext_resource type="Texture2D" uid="uid://cfiiaa05q3qat" path="res://img/wolf_attack.png" id="3_djrtp"]
-[ext_resource type="Texture2D" uid="uid://dm5g6i253dhlp" path="res://img/wolf_damage.png" id="5_cv4rl"]
-[ext_resource type="Texture2D" uid="uid://beg1swfwqnyt5" path="res://img/wolf_move.png" id="6_pmjtr"]
+[ext_resource type="PackedScene" path="res://Scenes/hpbar.tscn" id="3_5eupl"]
+[ext_resource type="Texture2D" uid="uid://cfiiaa05q3qat" path="res://Img/wolf_attack.png" id="3_djrtp"]
+[ext_resource type="Texture2D" uid="uid://dm5g6i253dhlp" path="res://Img/wolf_damage.png" id="5_cv4rl"]
+[ext_resource type="Texture2D" uid="uid://beg1swfwqnyt5" path="res://Img/wolf_move.png" id="6_pmjtr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y4hft"]
 animations = [{
